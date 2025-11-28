@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "com.cactus.example.composeApp-debug-47:/font_led_dot_matrix.ttf.flat",
+        "source": "com.cactus.example.composeApp-androidMain-48:/font/led_dot_matrix.ttf"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-debug-47:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/mac/.gradle/daemon/8.9/com.cactus.example.composeApp-androidMain-48:/mipmap-mdpi/ic_launcher.png"
+    }
+]
