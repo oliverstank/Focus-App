@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:2:1-37:12
-INJECTED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:2:1-37:12
-INJECTED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:2:1-37:12
-INJECTED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:2:1-37:12
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:2:1-57:12
 MERGED from [androidx.compose.material3:material3-android:1.2.0] /Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.material:material-android:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/114aee948f3f564a8d9d7f7a97312191/transformed/material-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-icons-core-android:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/5e21fa383a7828170b550c85893f2020/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
@@ -58,20 +58,42 @@ MERGED from [net.java.dev.jna:jna:5.13.0] /Users/mac/.gradle/caches/8.9/transfor
 		INJECTED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:4:5-67
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:4:22-64
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:5:22-64
 uses-permission#android.permission.POST_NOTIFICATIONS
-ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:5:5-77
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:6:5-77
 	android:name
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:5:22-74
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:6:22-74
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:7:5-78
+	android:name
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:7:22-75
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:8:5-77
+	android:name
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:8:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE_SPECIAL_USE
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:9:5-89
+	android:name
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:9:22-86
+uses-permission#android.permission.PACKAGE_USAGE_STATS
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:10:5-12:47
+	android:protectionLevel
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:11:9-99
+	tools:ignore
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:12:9-44
+	android:name
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:10:22-75
 application
-ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:7:5-35:19
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:14:5-55:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/8c4c3c182f1a99e6c7e2e48a0a2a7e07/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/8c4c3c182f1a99e6c7e2e48a0a2a7e07/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/4c531f3a8f077ecbc5deba8ecc3b31ab/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:22:5-26:19
@@ -89,55 +111,75 @@ MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradl
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/mac/.gradle/caches/8.9/transforms/5d1562499cd82d0790e195a0f2b5d1cd/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/mac/.gradle/caches/8.9/transforms/5d1562499cd82d0790e195a0f2b5d1cd/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:15:9-41
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:22:9-41
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:12:9-35
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:19:9-35
 	android:label
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:10:9-41
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:17:9-41
 	android:roundIcon
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:11:9-54
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:18:9-54
 	android:icon
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:9:9-43
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:16:9-43
 	android:allowBackup
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:8:9-35
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:15:9-35
 	android:theme
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:13:9-72
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:20:9-72
 	android:usesCleartextTraffic
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:14:9-44
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:21:9-44
 activity#com.cactus.example.MainActivity
-ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:16:9-25:20
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:23:9-32:20
 	android:windowSoftInputMode
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:18:13-55
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:25:13-55
 	android:exported
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:17:13-36
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:24:13-36
 	android:name
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:19:13-41
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:26:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:20:13-24:29
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:21:17-69
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:21:25-66
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:23:17-77
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:23:27-74
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:30:27-74
 service#com.cactus.example.NotificationListener
-ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:27:9-34:19
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:34:9-41:19
 	android:exported
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:29:13-36
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:36:13-36
 	android:permission
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:30:13-87
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:37:13-87
 	android:name
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:28:13-49
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:35:13-49
 intent-filter#action:name:android.service.notification.NotificationListenerService
-ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:31:13-33:29
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:38:13-40:29
 action#android.service.notification.NotificationListenerService
-ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:32:17-99
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:39:17-99
 	android:name
-		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:32:25-96
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:39:25-96
+service#com.cactus.example.AppBlockerService
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:43:9-50:19
+	android:exported
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:45:13-37
+	android:foregroundServiceType
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:46:13-55
+	android:name
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:44:13-46
+property#android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:47:13-49:62
+	android:value
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:49:17-59
+	android:name
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:48:17-76
+receiver#com.cactus.example.UnlockReceiver
+ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:52:9-54:40
+	android:exported
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:54:13-37
+	android:name
+		ADDED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:53:13-43
 uses-sdk
 INJECTED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml

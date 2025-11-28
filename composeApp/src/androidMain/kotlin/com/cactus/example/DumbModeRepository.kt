@@ -1,0 +1,132 @@
+package com.cactus.example
+
+import android.content.Context
+import android.content.SharedPreferences
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+
+object DumbModeRepository {
+    private lateinit var prefs: SharedPreferences
+    private var appPackageName: String = ""
+
+    private val _settings = MutableStateFlow(DumbModeSettings())
+    val settings: StateFlow<DumbModeSettings> = _settings.asStateFlow()
+
+    private val _temporaryUnlocks = MutableStateFlow<List<TemporaryUnlock>>(emptyList())
+    val temporaryUnlocks: StateFlow<List<TemporaryUnlock>> = _temporaryUnlocks.asStateFlow()
+
+    private val _queuedNotifications = MutableStateFlow<List<QueuedNotification>>(emptyList())
+    val queuedNotifications: StateFlow<List<QueuedNotification>> = _queuedNotifications.asStateFlow()
+
+    fun initialize(context: Context) {
+        prefs = context.getSharedPreferences("dumb_mode_prefs", Context.MODE_PRIVATE)
+        appPackageName = context.packageName
+        loadSettings()
+    }
+
+    private fun loadSettings() {
+        val isEnabled = prefs.getBoolean("is_enabled", false)
+        val whitelistedApps = prefs.getStringSet("whitelisted_apps", null) ?: EssentialApps.DEFAULT_WHITELIST
+        val priorityContacts = prefs.getStringSet("priority_contacts", emptySet()) ?: emptySet()
+        val priorityKeywords = prefs.getStringSet("priority_keywords", null) ?: DumbModeSettings().priorityKeywords
+        val summaryHour = prefs.getInt("summary_hour", 20)
+        val summaryMinute = prefs.getInt("summary_minute", 0)
+        val alwaysPriorityApps = prefs.getStringSet("always_priority_apps", emptySet()) ?: emptySet()
+        val neverPriorityApps = prefs.getStringSet("never_priority_apps", emptySet()) ?: emptySet()
+
+        _settings.value = DumbModeSettings(
+            isEnabled = isEnabled,
+            whitelistedApps = whitelistedApps,
+            priorityContacts = priorityContacts,
+            priorityKeywords = priorityKeywords,
+            summaryTime = SummaryTime(summaryHour, summaryMinute),
+            alwaysPriorityApps = alwaysPriorityApps,
+            neverPriorityApps = neverPriorityApps
+        )
+    }
+
+    fun updateSettings(settings: DumbModeSettings) {
+        prefs.edit().apply {
+            putBoolean("is_enabled", settings.isEnabled)
+            putStringSet("whitelisted_apps", settings.whitelistedApps)
+            putStringSet("priority_contacts", settings.priorityContacts)
+            putStringSet("priority_keywords", settings.priorityKeywords)
+            putInt("summary_hour", settings.summaryTime.hour)
+            putInt("summary_minute", settings.summaryTime.minute)
+            putStringSet("always_priority_apps", settings.alwaysPriorityApps)
+            putStringSet("never_priority_apps", settings.neverPriorityApps)
+            apply()
+        }
+        _settings.value = settings
+    }
+
+    fun setDumbModeEnabled(enabled: Boolean) {
+        val newSettings = _settings.value.copy(isEnabled = enabled)
+        updateSettings(newSettings)
+    }
+
+    fun addWhitelistedApp(packageName: String) {
+        val newSettings = _settings.value.copy(
+            whitelistedApps = _settings.value.whitelistedApps + packageName
+        )
+        updateSettings(newSettings)
+    }
+
+    fun removeWhitelistedApp(packageName: String) {
+        val newSettings = _settings.value.copy(
+            whitelistedApps = _settings.value.whitelistedApps - packageName
+        )
+        updateSettings(newSettings)
+    }
+
+    fun addTemporaryUnlock(packageName: String) {
+        val unlock = TemporaryUnlock(
+            packageName = packageName,
+            unlockTime = System.currentTimeMillis(),
+            durationMinutes = 5
+        )
+        _temporaryUnlocks.value = _temporaryUnlocks.value + unlock
+    }
+
+    fun isAppTemporarilyUnlocked(packageName: String): Boolean {
+        // Clean up expired unlocks
+        _temporaryUnlocks.value = _temporaryUnlocks.value.filter { it.isStillUnlocked() }
+
+        return _temporaryUnlocks.value.any {
+            it.packageName == packageName && it.isStillUnlocked()
+        }
+    }
+
+    fun isAppBlocked(packageName: String): Boolean {
+        if (!_settings.value.isEnabled) return false
+        // Never block the app itself
+        if (packageName == appPackageName) return false
+        if (isAppTemporarilyUnlocked(packageName)) return false
+        // Block all apps EXCEPT whitelisted ones
+        return packageName !in _settings.value.whitelistedApps
+    }
+
+    fun addQueuedNotification(notification: NotificationData, priority: NotificationPriority) {
+        val queued = QueuedNotification(
+            notification = notification,
+            priority = priority
+        )
+        _queuedNotifications.value = _queuedNotifications.value + queued
+    }
+
+    fun getTodayQueuedNotifications(): List<QueuedNotification> {
+        val startOfDay = java.util.Calendar.getInstance().apply {
+            set(java.util.Calendar.HOUR_OF_DAY, 0)
+            set(java.util.Calendar.MINUTE, 0)
+            set(java.util.Calendar.SECOND, 0)
+            set(java.util.Calendar.MILLISECOND, 0)
+        }.timeInMillis
+
+        return _queuedNotifications.value.filter { it.queuedAt >= startOfDay }
+    }
+
+    fun clearQueuedNotifications() {
+        _queuedNotifications.value = emptyList()
+    }
+}

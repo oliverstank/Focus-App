@@ -5,7 +5,9 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Refresh
@@ -13,6 +15,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -25,46 +30,91 @@ import java.util.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun App(viewModel: NotificationViewModel = viewModel()) {
-    val uiState by viewModel.uiState.collectAsState()
-    val notifications by viewModel.todayNotifications.collectAsState()
+fun App() {
+    var selectedTab by remember { mutableStateOf(0) }
 
     NothingTheme {
         Scaffold(
             containerColor = MaterialTheme.colorScheme.background,
-            topBar = {
-                CenterAlignedTopAppBar(
-                    title = {
-                        Text(
-                            "NOTIFICATIONS",
-                            style = MaterialTheme.typography.titleLarge,
-                            fontWeight = FontWeight.Black,
-                            letterSpacing = 1.5.sp
-                        )
-                    },
-                    colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.background,
-                        titleContentColor = MaterialTheme.colorScheme.onBackground
-                    ),
-                    actions = {
-                        IconButton(
-                            onClick = { viewModel.clearNotifications() },
-                            modifier = Modifier
-                                .padding(end = 8.dp)
-                                .size(40.dp)
-                                .clip(RoundedCornerShape(12.dp))
-                                .background(MaterialTheme.colorScheme.surface)
-                        ) {
-                            Icon(
-                                Icons.Default.Clear,
-                                contentDescription = "Clear notifications",
-                                tint = MaterialTheme.colorScheme.primary
+            bottomBar = {
+                NavigationBar(
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    contentColor = MaterialTheme.colorScheme.onSurface
+                ) {
+                    NavigationBarItem(
+                        selected = selectedTab == 0,
+                        onClick = { selectedTab = 0 },
+                        icon = {
+                            Text(
+                                "NOTIFICATIONS",
+                                style = MaterialTheme.typography.labelMedium,
+                                fontWeight = if (selectedTab == 0) FontWeight.Bold else FontWeight.Normal
                             )
                         }
-                    }
-                )
+                    )
+                    NavigationBarItem(
+                        selected = selectedTab == 1,
+                        onClick = { selectedTab = 1 },
+                        icon = {
+                            Text(
+                                "DUMB MODE",
+                                style = MaterialTheme.typography.labelMedium,
+                                fontWeight = if (selectedTab == 1) FontWeight.Bold else FontWeight.Normal
+                            )
+                        }
+                    )
+                }
             }
         ) { paddingValues ->
+            when (selectedTab) {
+                0 -> NotificationSummaryScreen(Modifier.padding(paddingValues))
+                1 -> DumbModeScreen()
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun NotificationSummaryScreen(modifier: Modifier = Modifier, viewModel: NotificationViewModel = viewModel()) {
+    val uiState by viewModel.uiState.collectAsState()
+    val notifications by viewModel.todayNotifications.collectAsState()
+
+    Scaffold(
+        containerColor = MaterialTheme.colorScheme.background,
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(
+                        "NOTIFICATIONS",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Black,
+                        letterSpacing = 1.5.sp
+                    )
+                },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.background,
+                    titleContentColor = MaterialTheme.colorScheme.onBackground
+                ),
+                actions = {
+                    IconButton(
+                        onClick = { viewModel.clearNotifications() },
+                        modifier = Modifier
+                            .padding(end = 8.dp)
+                            .size(40.dp)
+                            .clip(RoundedCornerShape(12.dp))
+                            .background(MaterialTheme.colorScheme.surface)
+                    ) {
+                        Icon(
+                            Icons.Default.Clear,
+                            contentDescription = "Clear notifications",
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                }
+            )
+        }
+    ) { paddingValues ->
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -113,7 +163,7 @@ fun App(viewModel: NotificationViewModel = viewModel()) {
                                 )
                                 Spacer(modifier = Modifier.width(6.dp))
                                 Text(
-                                    "REFRESH",
+                                    "GENERATE",
                                     fontWeight = FontWeight.Bold,
                                     style = MaterialTheme.typography.labelLarge
                                 )
@@ -150,11 +200,18 @@ fun App(viewModel: NotificationViewModel = viewModel()) {
                                 }
                             }
                             is NotificationViewModel.UiState.Success -> {
-                                Text(
-                                    text = state.summary,
-                                    style = MaterialTheme.typography.bodyMedium,
-                                    lineHeight = 20.sp
-                                )
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .heightIn(max = 200.dp)
+                                        .verticalScroll(rememberScrollState())
+                                ) {
+                                    Text(
+                                        text = state.summary,
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        lineHeight = 20.sp
+                                    )
+                                }
                             }
                             is NotificationViewModel.UiState.Error -> {
                                 Row(
@@ -250,7 +307,6 @@ fun App(viewModel: NotificationViewModel = viewModel()) {
                     }
                 }
             }
-        }
     }
 }
 
