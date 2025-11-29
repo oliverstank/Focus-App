@@ -154,66 +154,6 @@ fun FocusModeScreen(viewModel: FocusModeViewModel = viewModel()) {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Notification counters
-            if (importantNotifications.isNotEmpty() || unimportantNotifications.isNotEmpty()) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(12.dp)
-                ) {
-                    // Important notifications
-                    Box(
-                        modifier = Modifier
-                            .weight(1f)
-                            .clip(RoundedCornerShape(16.dp))
-                            .background(MaterialTheme.colorScheme.errorContainer)
-                            .padding(16.dp)
-                    ) {
-                        Column {
-                            Text(
-                                text = "IMPORTANT",
-                                style = MaterialTheme.typography.labelMedium,
-                                fontWeight = FontWeight.Black,
-                                letterSpacing = 1.sp,
-                                color = MaterialTheme.colorScheme.onErrorContainer
-                            )
-                            Text(
-                                text = "${importantNotifications.size}",
-                                style = MaterialTheme.typography.displaySmall,
-                                fontWeight = FontWeight.Black,
-                                color = MaterialTheme.colorScheme.onErrorContainer
-                            )
-                        }
-                    }
-
-                    // Ignored notifications
-                    Box(
-                        modifier = Modifier
-                            .weight(1f)
-                            .clip(RoundedCornerShape(16.dp))
-                            .background(MaterialTheme.colorScheme.surfaceVariant)
-                            .padding(16.dp)
-                    ) {
-                        Column {
-                            Text(
-                                text = "IGNORED",
-                                style = MaterialTheme.typography.labelMedium,
-                                fontWeight = FontWeight.Black,
-                                letterSpacing = 1.sp,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                            Text(
-                                text = "${unimportantNotifications.size}",
-                                style = MaterialTheme.typography.displaySmall,
-                                fontWeight = FontWeight.Black,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(16.dp))
-            }
-
             // Whitelisted apps section
             Row(
                 modifier = Modifier.fillMaxWidth(),

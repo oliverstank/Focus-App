@@ -30,11 +30,13 @@ class NotificationProcessingWorker(
             // Get new pending notifications
             val pendingNotifications = FocusModeRepository.getPendingNotificationsAndClear()
 
-            // Get all existing categorized notifications for re-evaluation
-            val existingNotifications = FocusModeRepository.getAllCategorizedNotifications()
+            // Get only unimportant notifications for re-evaluation
+            // Important notifications are kept as-is and not re-evaluated
+            val unimportantNotifications = FocusModeRepository.unimportantNotifications.value.map { it.notification }
 
-            // Combine new and existing notifications for re-evaluation
-            val allNotifications = (pendingNotifications + existingNotifications).distinctBy { it.id }
+            // Combine new pending with existing unimportant for re-evaluation
+            // Important notifications are never re-evaluated once categorized
+            val allNotifications = (pendingNotifications + unimportantNotifications).distinctBy { it.id }
 
             if (allNotifications.isEmpty()) {
                 Log.d(TAG, "No notifications to process")
@@ -42,7 +44,7 @@ class NotificationProcessingWorker(
                 return@withContext Result.success()
             }
 
-            Log.d(TAG, "Processing ${allNotifications.size} notifications (${pendingNotifications.size} new, ${existingNotifications.size} existing)")
+            Log.d(TAG, "Processing ${allNotifications.size} notifications (${pendingNotifications.size} new, ${unimportantNotifications.size} unimportant for re-eval)")
             FocusModeRepository.updateProcessingStatus(
                 ProcessingStatus.FILTERING,
                 "Processing ${allNotifications.size} notifications..."
@@ -81,11 +83,19 @@ class NotificationProcessingWorker(
 
                 Log.d(TAG, "Categorized: ${importantNotifications.size} important, ${unimportantNotifications.size} unimportant")
 
+                // Get existing important notifications (we don't re-evaluate these)
+                val existingImportantNotifications = FocusModeRepository.importantNotifications.value.map { it.notification }
+
+                // Combine new important with existing important
+                val allImportantNotifications = (existingImportantNotifications + importantNotifications).distinctBy { it.id }
+
                 // Update repository with categorized notifications
                 FocusModeRepository.recategorizeNotifications(
-                    importantNotifications,
+                    allImportantNotifications,
                     unimportantNotifications
                 )
+
+                Log.d(TAG, "Total important: ${allImportantNotifications.size} (${existingImportantNotifications.size} existing + ${importantNotifications.size} new)")
 
                 // Show system notifications for newly categorized important notifications
                 // (only show notifications that were just added to pending, not re-evaluated ones)

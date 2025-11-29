@@ -2,6 +2,7 @@ package com.cactus.example
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -201,6 +202,7 @@ fun ProcessingStatusBar() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NotificationSummaryScreen(modifier: Modifier = Modifier, viewModel: NotificationViewModel = viewModel()) {
+    val context = LocalContext.current
     val uiState by viewModel.uiState.collectAsState()
     val notifications by viewModel.todayNotifications.collectAsState()
     val importantNotifications by FocusModeRepository.importantNotifications.collectAsState()
@@ -373,62 +375,95 @@ fun NotificationSummaryScreen(modifier: Modifier = Modifier, viewModel: Notifica
                 )
 
                 // Important and Ignored counts
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 16.dp),
-                    horizontalArrangement = Arrangement.spacedBy(12.dp)
-                ) {
-                    // Important notifications count
-                    Box(
+                Column {
+                    Row(
                         modifier = Modifier
-                            .weight(1f)
-                            .clip(RoundedCornerShape(16.dp))
-                            .background(MaterialTheme.colorScheme.errorContainer)
-                            .padding(16.dp)
+                            .fillMaxWidth()
+                            .padding(bottom = 12.dp),
+                        horizontalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
-                        Column {
-                            Text(
-                                text = "IMPORTANT",
-                                style = MaterialTheme.typography.labelMedium,
-                                fontWeight = FontWeight.Black,
-                                letterSpacing = 1.sp,
-                                color = MaterialTheme.colorScheme.onErrorContainer
-                            )
-                            Text(
-                                text = "${importantNotifications.size}",
-                                style = MaterialTheme.typography.displaySmall,
-                                fontWeight = FontWeight.Black,
-                                color = MaterialTheme.colorScheme.onErrorContainer
-                            )
+                        // Important notifications count
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .clip(RoundedCornerShape(16.dp))
+                                .background(MaterialTheme.colorScheme.errorContainer)
+                                .padding(16.dp)
+                        ) {
+                            Column {
+                                Text(
+                                    text = "IMPORTANT",
+                                    style = MaterialTheme.typography.labelMedium,
+                                    fontWeight = FontWeight.Black,
+                                    letterSpacing = 1.sp,
+                                    color = MaterialTheme.colorScheme.onErrorContainer
+                                )
+                                Text(
+                                    text = "${importantNotifications.size}",
+                                    style = MaterialTheme.typography.displaySmall,
+                                    fontWeight = FontWeight.Black,
+                                    color = MaterialTheme.colorScheme.onErrorContainer
+                                )
+                            }
+                        }
+
+                        // Ignored notifications count
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .clip(RoundedCornerShape(16.dp))
+                                .background(MaterialTheme.colorScheme.surfaceVariant)
+                                .padding(16.dp)
+                        ) {
+                            Column {
+                                Text(
+                                    text = "IGNORED",
+                                    style = MaterialTheme.typography.labelMedium,
+                                    fontWeight = FontWeight.Black,
+                                    letterSpacing = 1.sp,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                                Text(
+                                    text = "${unimportantNotifications.size}",
+                                    style = MaterialTheme.typography.displaySmall,
+                                    fontWeight = FontWeight.Black,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
                         }
                     }
 
-                    // Ignored notifications count
-                    Box(
-                        modifier = Modifier
-                            .weight(1f)
-                            .clip(RoundedCornerShape(16.dp))
-                            .background(MaterialTheme.colorScheme.surfaceVariant)
-                            .padding(16.dp)
-                    ) {
-                        Column {
-                            Text(
-                                text = "IGNORED",
-                                style = MaterialTheme.typography.labelMedium,
-                                fontWeight = FontWeight.Black,
-                                letterSpacing = 1.sp,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                    // Clear alerts button
+                    if (importantNotifications.isNotEmpty() || unimportantNotifications.isNotEmpty()) {
+                        Button(
+                            onClick = {
+                                FocusModeRepository.clearCategorizedNotifications()
+                            },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(48.dp),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = MaterialTheme.colorScheme.error.copy(alpha = 0.1f),
+                                contentColor = MaterialTheme.colorScheme.error
+                            ),
+                            shape = RoundedCornerShape(12.dp)
+                        ) {
+                            Icon(
+                                Icons.Default.Clear,
+                                contentDescription = "Clear alerts",
+                                modifier = Modifier.size(18.dp)
                             )
+                            Spacer(modifier = Modifier.width(8.dp))
                             Text(
-                                text = "${unimportantNotifications.size}",
-                                style = MaterialTheme.typography.displaySmall,
+                                "CLEAR ALL ALERTS",
                                 fontWeight = FontWeight.Black,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                                letterSpacing = 1.sp
                             )
                         }
                     }
                 }
+
+                Spacer(modifier = Modifier.height(16.dp))
 
                 // Show important notifications
                 if (importantNotifications.isEmpty()) {
@@ -467,11 +502,153 @@ fun NotificationSummaryScreen(modifier: Modifier = Modifier, viewModel: Notifica
                         verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
                         items(importantNotifications) { categorized ->
-                            NotificationCard(categorized.notification)
+                            ImportantNotificationCard(
+                                notification = categorized.notification,
+                                onUnlock = {
+                                    // Temporarily unlock the app for 5 minutes
+                                    FocusModeRepository.addTemporaryUnlock(categorized.notification.packageName)
+
+                                    // Launch the app
+                                    try {
+                                        val launchIntent = context.packageManager.getLaunchIntentForPackage(
+                                            categorized.notification.packageName
+                                        )
+                                        if (launchIntent != null) {
+                                            context.startActivity(launchIntent)
+                                        }
+                                    } catch (e: Exception) {
+                                        android.util.Log.e("NotificationScreen", "Failed to launch app", e)
+                                    }
+                                }
+                            )
                         }
                     }
                 }
             }
+    }
+}
+
+@Composable
+fun ImportantNotificationCard(notification: NotificationData, onUnlock: () -> Unit) {
+    var isUnlocked by remember { mutableStateOf(false) }
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(16.dp))
+            .clickable(enabled = !isUnlocked) {
+                onUnlock()
+                isUnlocked = true
+            }
+            .background(
+                if (isUnlocked)
+                    MaterialTheme.colorScheme.primaryContainer
+                else
+                    MaterialTheme.colorScheme.errorContainer
+            )
+            .border(
+                width = 2.dp,
+                color = if (isUnlocked)
+                    MaterialTheme.colorScheme.primary
+                else
+                    MaterialTheme.colorScheme.error,
+                shape = RoundedCornerShape(16.dp)
+            )
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            // Header with app name and time
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .size(8.dp)
+                            .clip(RoundedCornerShape(4.dp))
+                            .background(
+                                if (isUnlocked)
+                                    MaterialTheme.colorScheme.primary
+                                else
+                                    MaterialTheme.colorScheme.error
+                            )
+                    )
+                    Text(
+                        text = notification.packageName.uppercase(),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = if (isUnlocked)
+                            MaterialTheme.colorScheme.onPrimaryContainer
+                        else
+                            MaterialTheme.colorScheme.onErrorContainer,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 0.8.sp
+                    )
+                }
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(8.dp))
+                        .background(
+                            if (isUnlocked)
+                                MaterialTheme.colorScheme.primary
+                            else
+                                MaterialTheme.colorScheme.error
+                        )
+                        .padding(horizontal = 8.dp, vertical = 4.dp)
+                ) {
+                    Text(
+                        text = if (isUnlocked) "UNLOCKED 5 MIN" else "TAP TO UNLOCK",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = if (isUnlocked)
+                            MaterialTheme.colorScheme.onPrimary
+                        else
+                            MaterialTheme.colorScheme.onError,
+                        fontWeight = FontWeight.Black,
+                        letterSpacing = 0.5.sp
+                    )
+                }
+            }
+
+            if (notification.title.isNotEmpty()) {
+                Spacer(modifier = Modifier.height(12.dp))
+                Text(
+                    text = notification.title,
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = if (isUnlocked)
+                        MaterialTheme.colorScheme.onPrimaryContainer
+                    else
+                        MaterialTheme.colorScheme.onErrorContainer
+                )
+            }
+
+            if (notification.text.isNotEmpty()) {
+                Spacer(modifier = Modifier.height(6.dp))
+                Text(
+                    text = notification.text,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = if (isUnlocked)
+                        MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f)
+                    else
+                        MaterialTheme.colorScheme.onErrorContainer.copy(alpha = 0.8f),
+                    lineHeight = 18.sp
+                )
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = SimpleDateFormat("MMM d, h:mm a", Locale.getDefault())
+                    .format(Date(notification.timestamp)),
+                style = MaterialTheme.typography.labelSmall,
+                color = if (isUnlocked)
+                    MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.6f)
+                else
+                    MaterialTheme.colorScheme.onErrorContainer.copy(alpha = 0.6f)
+            )
+        }
     }
 }
 

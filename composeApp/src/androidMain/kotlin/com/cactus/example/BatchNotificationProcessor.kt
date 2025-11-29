@@ -91,21 +91,37 @@ class BatchNotificationProcessor(
         }.joinToString("\n\n")
 
         return """
-            Analyze these ${notifications.size} notifications and determine which ones are URGENT.
+            You are a notification filter. Classify each notification as URGENT (true) or NOT URGENT (false).
 
-            URGENT notifications are: time-sensitive, important, require immediate attention, from important people, emergencies, work-critical, messages from real people.
-            NOT URGENT notifications are: promotional, informational, social media likes/comments, general updates, app notifications, automated messages, music/media playback.
+            URGENT (true) means:
+            - Emergency messages: "help", "danger", "emergency", "urgent", "SOS", "911" or similar. 
+            - Work-critical alerts (server down, security breach) or similar.
+            - Messages containing: "ASAP", "immediately", "critical", "important call" or similar.
+
+            NOT URGENT (false) means:
+            - Promotional offers: "free", "discount", "sale", "congratulations"
+            - Music/media notifications (Spotify, YouTube, Amazon Music)
+            - Social media likes/comments (Instagram, Facebook, Twitter)
+            - App updates or system notifications
+            - Marketing messages
+            - Generic app notifications
+           
+
+            EXAMPLES:
+            - "Help I am in danger" → true (emergency)
+            - "Congratulations! Free music for 4 months" → false (promotional)
+            - "Meeting in 10 minutes" → true (time-sensitive)
+            - "Your package has shipped" → false (informational)
+            - "Server load at 95%" → true (work-critical)
+            - "Now playing: Song Name" → false (media playback)
 
             $notificationList
 
-            CRITICAL INSTRUCTION: Respond with ONLY a comma-separated list of true/false values. DO NOT include any explanation, reasoning, or thinking process. DO NOT use <think> tags.
+            RESPOND WITH ONLY COMMA-SEPARATED true/false VALUES. NO EXPLANATION.
 
             For ${notifications.size} notifications, respond with exactly ${notifications.size} comma-separated values.
 
-            Example for 2 notifications: false,true
-            Example for 5 notifications: true,false,false,true,false
-
-            Your response (ONLY the comma-separated values):
+            Your response:
         """.trimIndent()
     }
 
