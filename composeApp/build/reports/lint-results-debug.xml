@@ -77,7 +77,7 @@
         errorLine2="                      ~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/NotificationListener.kt"
-            line="112"
+            line="114"
             column="23"/>
     </issue>
 
@@ -93,7 +93,7 @@
         errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/NotificationListener.kt"
-            line="119"
+            line="121"
             column="29"/>
     </issue>
 
@@ -129,7 +129,7 @@
         errorLine2="      ~~~~~~~~~~~~~~">
         <location
             file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/SplashActivity.kt"
-            line="26"
+            line="18"
             column="7"/>
     </issue>
 
@@ -280,22 +280,6 @@
     </issue>
 
     <issue
-        id="ObjectAnimatorBinding"
-        severity="Error"
-        message="Could not find property setter method `setLogoAlpha` on `com.cactus.example.NothingAnimationView`"
-        category="Correctness"
-        priority="4"
-        summary="Incorrect ObjectAnimator Property"
-        explanation="This check cross references properties referenced by String from `ObjectAnimator` and `PropertyValuesHolder` method calls and ensures that the corresponding setter methods exist and have the right signatures."
-        errorLine1="        val fadeInLogo = ObjectAnimator.ofFloat(this, &quot;logoAlpha&quot;, 0f, 1f).apply {"
-        errorLine2="                                                      ~~~~~~~~~~~">
-        <location
-            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/SplashActivity.kt"
-            line="175"
-            column="55"/>
-    </issue>
-
-    <issue
         id="ChromeOsAbiSupport"
         severity="Warning"
         message="Missing x86_64 ABI support for ChromeOS"
@@ -342,35 +326,225 @@
     </issue>
 
     <issue
-        id="MonochromeLauncherIcon"
+        id="UnusedResources"
         severity="Warning"
-        message="The application adaptive icon is missing a monochrome tag"
-        category="Usability:Icons"
-        priority="6"
-        summary="Monochrome icon is not defined"
-        explanation="If `android:roundIcon` and `android:icon` are both in your manifest, you must either remove the reference to `android:roundIcon` if it is not needed; or, supply the monochrome icon in the drawable defined by the `android:roundIcon` and `android:icon` attribute.&#xA;&#xA;For example, if `android:roundIcon` and `android:icon` are both in the manifest, a launcher might choose to use `android:roundIcon` over `android:icon` to display the adaptive app icon. Therefore, your themed application iconwill not show if your monochrome attribute is not also specified in `android:roundIcon`."
-        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        message="The resource `R.drawable.ic_launcher_background` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
         errorLine2="^">
         <location
-            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-anydpi-v26/ic_launcher.xml"
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/drawable/ic_launcher_background.xml"
             line="2"
             column="1"/>
     </issue>
 
     <issue
-        id="MonochromeLauncherIcon"
+        id="UnusedResources"
         severity="Warning"
-        message="The application adaptive roundIcon is missing a monochrome tag"
-        category="Usability:Icons"
-        priority="6"
-        summary="Monochrome icon is not defined"
-        explanation="If `android:roundIcon` and `android:icon` are both in your manifest, you must either remove the reference to `android:roundIcon` if it is not needed; or, supply the monochrome icon in the drawable defined by the `android:roundIcon` and `android:icon` attribute.&#xA;&#xA;For example, if `android:roundIcon` and `android:icon` are both in the manifest, a launcher might choose to use `android:roundIcon` over `android:icon` to display the adaptive app icon. Therefore, your themed application iconwill not show if your monochrome attribute is not also specified in `android:roundIcon`."
-        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        message="The resource `R.drawable.ic_launcher_foreground` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
         errorLine2="^">
         <location
-            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-anydpi-v26/ic_launcher_round.xml"
-            line="2"
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/drawable-v24/ic_launcher_foreground.xml"
+            line="1"
             column="1"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-hdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-mdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xhdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxhdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icons should not fill every pixel of their square region; see the design guide for details"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icon used as round icon did not have a circular shape"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-hdpi/ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icon used as round icon did not have a circular shape"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-mdpi/ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icon used as round icon did not have a circular shape"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icon used as round icon did not have a circular shape"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        severity="Warning"
+        message="Launcher icon used as round icon did not have a circular shape"
+        category="Usability:Icons"
+        priority="6"
+        summary="The launcher icon shape should use a distinct silhouette"
+        explanation="According to the Android Design Guide (https://d.android.com/r/studio-ui/designer/material/iconography) your launcher icons should &quot;use a distinct silhouette&quot;, a &quot;three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth.&quot;&#xA;&#xA;The unique silhouette implies that your launcher icon should not be a filled square.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        severity="Warning"
+        message="The image `ic_launcher.png` varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher.png: 512x512 dp (768x768 px), mipmap-mdpi/ic_launcher.png: 768x768 dp (768x768 px), mipmap-xhdpi/ic_launcher.png: 384x384 dp (768x768 px), mipmap-xxhdpi/ic_launcher.png: 256x256 dp (768x768 px), mipmap-xxxhdpi/ic_launcher.png: 192x192 dp (768x768 px)"
+        category="Usability:Icons"
+        priority="5"
+        summary="Icon density-independent size validation"
+        explanation="Checks the all icons which are provided in multiple densities, all compute to roughly the same density-independent pixel (`dip`) size. This catches errors where images are either placed in the wrong folder, or icons are changed to new sizes but some folders are forgotten.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxhdpi/ic_launcher.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xhdpi/ic_launcher.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-hdpi/ic_launcher.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-mdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconDipSize"
+        severity="Warning"
+        message="The image `ic_launcher_round.png` varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher_round.png: 512x512 dp (768x768 px), mipmap-mdpi/ic_launcher_round.png: 768x768 dp (768x768 px), mipmap-xhdpi/ic_launcher_round.png: 384x384 dp (768x768 px), mipmap-xxhdpi/ic_launcher_round.png: 256x256 dp (768x768 px), mipmap-xxxhdpi/ic_launcher_round.png: 192x192 dp (768x768 px)"
+        category="Usability:Icons"
+        priority="5"
+        summary="Icon density-independent size validation"
+        explanation="Checks the all icons which are provided in multiple densities, all compute to roughly the same density-independent pixel (`dip`) size. This catches errors where images are either placed in the wrong folder, or icons are changed to new sizes but some folders are forgotten.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-hdpi/ic_launcher_round.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-mdpi/ic_launcher_round.png"/>
+    </issue>
+
+    <issue
+        id="IconDuplicates"
+        severity="Warning"
+        message="The following unrelated icon files have identical contents: ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png"
+        category="Usability:Icons"
+        priority="3"
+        summary="Duplicated icons under different names"
+        explanation="If an icon is repeated under different names, you can consolidate and just use one of the icons and delete the others to make your application smaller. However, duplicated icons usually are not intentional and can sometimes point to icons that were accidentally overwritten or accidentally not updated.">
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxhdpi/ic_launcher.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xhdpi/ic_launcher.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-mdpi/ic_launcher_round.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-mdpi/ic_launcher.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-hdpi/ic_launcher_round.png"/>
+        <location
+            file="/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-hdpi/ic_launcher.png"/>
     </issue>
 
 </issues>

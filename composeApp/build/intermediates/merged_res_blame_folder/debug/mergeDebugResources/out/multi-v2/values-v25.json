@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.cactus.example.composeApp-mergeDebugResources-51:/values-v25/values-v25.xml",
+            "outputFile": "com.cactus.example.composeApp-mergeDebugResources-58:/values-v25/values-v25.xml",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-v25/values-v25.xml",

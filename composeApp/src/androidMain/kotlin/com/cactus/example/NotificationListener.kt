@@ -10,6 +10,9 @@ import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import android.util.Log
 import androidx.core.app.NotificationCompat
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
 import com.cactus.CactusLM
 import com.cactus.CactusInitParams
 import kotlinx.coroutines.CoroutineScope
@@ -17,6 +20,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
 
 class NotificationListener : NotificationListenerService() {
 
@@ -28,7 +32,10 @@ class NotificationListener : NotificationListenerService() {
         super.onCreate()
         FocusModeRepository.initialize(this)
 
-        // Initialize LLM for priority analysis
+        // Schedule periodic batch processing every 5 minutes
+        scheduleNotificationProcessing()
+
+        // Initialize LLM for priority analysis (used for immediate keyword checks)
         serviceScope.launch(Dispatchers.IO) {
             try {
                 cactusLM = CactusLM()
@@ -40,6 +47,25 @@ class NotificationListener : NotificationListenerService() {
                 Log.e("NotificationListener", "Failed to initialize LLM", e)
             }
         }
+    }
+
+    private fun scheduleNotificationProcessing() {
+        val workRequest = PeriodicWorkRequestBuilder<NotificationProcessingWorker>(
+            3, TimeUnit.MINUTES,
+            1, TimeUnit.MINUTES // flex interval
+        ).build()
+
+        WorkManager.getInstance(applicationContext).enqueueUniquePeriodicWork(
+            NotificationProcessingWorker.WORK_NAME,
+            ExistingPeriodicWorkPolicy.KEEP,
+            workRequest
+        )
+
+        // Set next scan time (3 minutes from now)
+        val nextScanTime = System.currentTimeMillis() + (3 * 60 * 1000)
+        FocusModeRepository.setNextScanTime(nextScanTime)
+
+        Log.d("NotificationListener", "Scheduled periodic notification processing every 3 minutes")
     }
 
     override fun onNotificationPosted(sbn: StatusBarNotification) {
@@ -67,16 +93,36 @@ class NotificationListener : NotificationListenerService() {
 
         NotificationRepository.addNotification(notificationData)
 
-        // Handle focus mode filtering
-        val settings = FocusModeRepository.settings.value
-        // If app is NOT whitelisted (i.e., blocked), handle the notification
-        if (settings.isEnabled && packageName !in settings.whitelistedApps) {
-            serviceScope.launch {
-                handleFocusModeNotification(sbn, notificationData, settings)
-            }
-        }
+        Log.d("NotificationListener", "========================================")
+        Log.d("NotificationListener", "NOTIFICATION RECEIVED:")
+        Log.d("NotificationListener", "  Package: $packageName")
+        Log.d("NotificationListener", "  Title: $title")
+        Log.d("NotificationListener", "  Text: $text")
+        Log.d("NotificationListener", "  Focus Mode Enabled: ${FocusModeRepository.settings.value.isEnabled}")
+        Log.d("NotificationListener", "========================================")
 
-        Log.d("NotificationListener", "Notification from $packageName: $title - $text")
+        // ALWAYS queue notification for batch processing (for testing)
+        // In production, you would check focus mode settings
+        FocusModeRepository.addPendingNotification(notificationData)
+        Log.d("NotificationListener", "✓ Notification QUEUED for batch processing")
+
+        // Handle focus mode filtering (only cancel if focus mode is enabled)
+        val settings = FocusModeRepository.settings.value
+        if (settings.isEnabled && packageName !in settings.whitelistedApps) {
+            // Cancel the original notification so user doesn't see it until it's processed
+            // Use a small delay to avoid race conditions
+            serviceScope.launch(Dispatchers.Main) {
+                try {
+                    kotlinx.coroutines.delay(100) // Small delay to avoid race condition
+                    cancelNotification(sbn.key)
+                    Log.d("NotificationListener", "✓ Cancelled original notification from $packageName")
+                } catch (e: Exception) {
+                    Log.e("NotificationListener", "✗ Failed to cancel notification", e)
+                }
+            }
+        } else {
+            Log.d("NotificationListener", "⚠ Focus mode disabled or app whitelisted - notification NOT cancelled")
+        }
     }
 
     private suspend fun handleFocusModeNotification(
@@ -93,6 +139,8 @@ class NotificationListener : NotificationListenerService() {
 
         when (priority) {
             NotificationPriority.HIGH -> {
+                // Cancel the original notification
+                cancelNotification(sbn.key)
                 // Show high priority notification with unlock option
                 showPriorityNotification(notificationData)
             }
@@ -124,7 +172,7 @@ class NotificationListener : NotificationListenerService() {
         }
         val unlockPendingIntent = PendingIntent.getBroadcast(
             this,
-            0,
+            notification.id.hashCode(),
             unlockIntent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
@@ -138,7 +186,7 @@ class NotificationListener : NotificationListenerService() {
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .addAction(
                 android.R.drawable.ic_lock_idle_lock,
-                "Unlock App (5 min)",
+                "Use Once",
                 unlockPendingIntent
             )
             .setAutoCancel(true)

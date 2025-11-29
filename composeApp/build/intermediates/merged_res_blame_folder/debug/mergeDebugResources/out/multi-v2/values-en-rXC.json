@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.cactus.example.composeApp-mergeDebugResources-51:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.cactus.example.composeApp-mergeDebugResources-58:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-en-rXC/values-en-rXC.xml",

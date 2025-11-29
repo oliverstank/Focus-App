@@ -29,6 +29,8 @@ fun FocusModeScreen(viewModel: FocusModeViewModel = viewModel()) {
     val settings by viewModel.settings.collectAsState()
     val installedApps by viewModel.installedApps.collectAsState()
     val queuedNotifications by viewModel.queuedNotifications.collectAsState()
+    val importantNotifications by viewModel.importantNotifications.collectAsState()
+    val unimportantNotifications by viewModel.unimportantNotifications.collectAsState()
     var showAppSelector by remember { mutableStateOf(false) }
     var permissionType by remember { mutableStateOf<String?>(null) }
 
@@ -152,6 +154,66 @@ fun FocusModeScreen(viewModel: FocusModeViewModel = viewModel()) {
 
             Spacer(modifier = Modifier.height(24.dp))
 
+            // Notification counters
+            if (importantNotifications.isNotEmpty() || unimportantNotifications.isNotEmpty()) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    // Important notifications
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .clip(RoundedCornerShape(16.dp))
+                            .background(MaterialTheme.colorScheme.errorContainer)
+                            .padding(16.dp)
+                    ) {
+                        Column {
+                            Text(
+                                text = "IMPORTANT",
+                                style = MaterialTheme.typography.labelMedium,
+                                fontWeight = FontWeight.Black,
+                                letterSpacing = 1.sp,
+                                color = MaterialTheme.colorScheme.onErrorContainer
+                            )
+                            Text(
+                                text = "${importantNotifications.size}",
+                                style = MaterialTheme.typography.displaySmall,
+                                fontWeight = FontWeight.Black,
+                                color = MaterialTheme.colorScheme.onErrorContainer
+                            )
+                        }
+                    }
+
+                    // Ignored notifications
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .clip(RoundedCornerShape(16.dp))
+                            .background(MaterialTheme.colorScheme.surfaceVariant)
+                            .padding(16.dp)
+                    ) {
+                        Column {
+                            Text(
+                                text = "IGNORED",
+                                style = MaterialTheme.typography.labelMedium,
+                                fontWeight = FontWeight.Black,
+                                letterSpacing = 1.sp,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                            Text(
+                                text = "${unimportantNotifications.size}",
+                                style = MaterialTheme.typography.displaySmall,
+                                fontWeight = FontWeight.Black,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(16.dp))
+            }
+
             // Whitelisted apps section
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -227,6 +289,88 @@ fun FocusModeScreen(viewModel: FocusModeViewModel = viewModel()) {
                         fontWeight = FontWeight.Medium
                     )
                 }
+            }
+        }
+    }
+}
+
+@Composable
+fun NotificationCard(notification: NotificationData, isImportant: Boolean) {
+    val dateFormat = SimpleDateFormat("MMM d, h:mm a", Locale.getDefault())
+    val formattedDate = dateFormat.format(Date(notification.timestamp))
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(12.dp))
+            .background(
+                if (isImportant)
+                    MaterialTheme.colorScheme.error.copy(alpha = 0.1f)
+                else
+                    MaterialTheme.colorScheme.surface
+            )
+            .border(
+                width = if (isImportant) 2.dp else 1.dp,
+                color = if (isImportant)
+                    MaterialTheme.colorScheme.error
+                else
+                    MaterialTheme.colorScheme.outline,
+                shape = RoundedCornerShape(12.dp)
+            )
+            .padding(12.dp)
+    ) {
+        Column {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text(
+                    text = notification.title,
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.weight(1f)
+                )
+                if (isImportant) {
+                    Text(
+                        text = "URGENT",
+                        style = MaterialTheme.typography.labelSmall,
+                        fontWeight = FontWeight.Black,
+                        color = MaterialTheme.colorScheme.error,
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(4.dp))
+                            .background(MaterialTheme.colorScheme.error.copy(alpha = 0.2f))
+                            .padding(horizontal = 6.dp, vertical = 2.dp)
+                    )
+                }
+            }
+            if (notification.text.isNotEmpty()) {
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(
+                    text = notification.text,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    maxLines = 2
+                )
+            }
+            Spacer(modifier = Modifier.height(4.dp))
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Text(
+                    text = notification.packageName,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
+                )
+                Text(
+                    text = "•",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
+                )
+                Text(
+                    text = formattedDate,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
+                )
             }
         }
     }

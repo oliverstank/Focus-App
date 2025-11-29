@@ -19,6 +19,21 @@ object FocusModeRepository {
     private val _queuedNotifications = MutableStateFlow<List<QueuedNotification>>(emptyList())
     val queuedNotifications: StateFlow<List<QueuedNotification>> = _queuedNotifications.asStateFlow()
 
+    // Pending notifications waiting for batch processing
+    private val _pendingNotifications = MutableStateFlow<List<NotificationData>>(emptyList())
+    val pendingNotifications: StateFlow<List<NotificationData>> = _pendingNotifications.asStateFlow()
+
+    // Categorized notifications (important and unimportant)
+    private val _importantNotifications = MutableStateFlow<List<CategorizedNotification>>(emptyList())
+    val importantNotifications: StateFlow<List<CategorizedNotification>> = _importantNotifications.asStateFlow()
+
+    private val _unimportantNotifications = MutableStateFlow<List<CategorizedNotification>>(emptyList())
+    val unimportantNotifications: StateFlow<List<CategorizedNotification>> = _unimportantNotifications.asStateFlow()
+
+    // Processing status tracking
+    private val _processingState = MutableStateFlow(ProcessingState())
+    val processingState: StateFlow<ProcessingState> = _processingState.asStateFlow()
+
     fun initialize(context: Context) {
         prefs = context.getSharedPreferences("focus_mode_prefs", Context.MODE_PRIVATE)
         appPackageName = context.packageName
@@ -131,5 +146,100 @@ object FocusModeRepository {
 
     fun clearQueuedNotifications() {
         _queuedNotifications.value = emptyList()
+    }
+
+    // Add a notification to the pending queue (for batch processing)
+    fun addPendingNotification(notification: NotificationData) {
+        _pendingNotifications.value = _pendingNotifications.value + notification
+    }
+
+    // Get and clear all pending notifications (for batch processing)
+    fun getPendingNotificationsAndClear(): List<NotificationData> {
+        val pending = _pendingNotifications.value
+        _pendingNotifications.value = emptyList()
+        return pending
+    }
+
+    // Clear pending notifications
+    fun clearPendingNotifications() {
+        _pendingNotifications.value = emptyList()
+    }
+
+    // Add important notification
+    fun addImportantNotification(notification: NotificationData) {
+        val categorized = CategorizedNotification(
+            notification = notification,
+            isImportant = true
+        )
+        _importantNotifications.value = _importantNotifications.value + categorized
+    }
+
+    // Add unimportant notification
+    fun addUnimportantNotification(notification: NotificationData) {
+        val categorized = CategorizedNotification(
+            notification = notification,
+            isImportant = false
+        )
+        _unimportantNotifications.value = _unimportantNotifications.value + categorized
+    }
+
+    // Get count of unimportant notifications
+    fun getUnimportantNotificationCount(): Int {
+        return _unimportantNotifications.value.size
+    }
+
+    // Clear all categorized notifications
+    fun clearCategorizedNotifications() {
+        _importantNotifications.value = emptyList()
+        _unimportantNotifications.value = emptyList()
+    }
+
+    // Get all notifications (for re-evaluation)
+    fun getAllCategorizedNotifications(): List<NotificationData> {
+        return (_importantNotifications.value.map { it.notification } +
+                _unimportantNotifications.value.map { it.notification })
+    }
+
+    // Re-categorize all notifications (used when LLM re-evaluates)
+    fun recategorizeNotifications(
+        importantNotifications: List<NotificationData>,
+        unimportantNotifications: List<NotificationData>
+    ) {
+        _importantNotifications.value = importantNotifications.map {
+            CategorizedNotification(notification = it, isImportant = true)
+        }
+        _unimportantNotifications.value = unimportantNotifications.map {
+            CategorizedNotification(notification = it, isImportant = false)
+        }
+    }
+
+    // Update processing status
+    fun updateProcessingStatus(status: ProcessingStatus, message: String = "") {
+        val statusMessage = when (status) {
+            ProcessingStatus.IDLE -> message.ifEmpty { "Waiting for notifications..." }
+            ProcessingStatus.SCANNING -> message.ifEmpty { "Scanning notifications..." }
+            ProcessingStatus.FILTERING -> message.ifEmpty { "Filtering notifications..." }
+            ProcessingStatus.ANALYZING_WITH_LLM -> message.ifEmpty { "Analyzing with AI..." }
+            ProcessingStatus.COMPLETE -> message.ifEmpty { "Processing complete" }
+        }
+
+        val currentTime = System.currentTimeMillis()
+        val nextScan = if (status == ProcessingStatus.COMPLETE) {
+            currentTime + (3 * 60 * 1000) // 3 minutes from now
+        } else {
+            _processingState.value.nextScanTime
+        }
+
+        _processingState.value = ProcessingState(
+            status = status,
+            message = statusMessage,
+            lastProcessedTime = if (status == ProcessingStatus.COMPLETE) currentTime else _processingState.value.lastProcessedTime,
+            nextScanTime = nextScan
+        )
+    }
+
+    // Set next scan time
+    fun setNextScanTime(timeMillis: Long) {
+        _processingState.value = _processingState.value.copy(nextScanTime = timeMillis)
     }
 }

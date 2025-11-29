@@ -119,3 +119,24 @@ data class QueuedNotification(
     val queuedAt: Long = System.currentTimeMillis(),
     val priority: NotificationPriority = NotificationPriority.LOW
 )
+
+data class CategorizedNotification(
+    val notification: NotificationData,
+    val isImportant: Boolean,
+    val categorizedAt: Long = System.currentTimeMillis()
+)
+
+enum class ProcessingStatus {
+    IDLE,
+    SCANNING,
+    FILTERING,
+    ANALYZING_WITH_LLM,
+    COMPLETE
+}
+
+data class ProcessingState(
+    val status: ProcessingStatus = ProcessingStatus.IDLE,
+    val message: String = "Waiting for notifications...",
+    val lastProcessedTime: Long = 0L,
+    val nextScanTime: Long = 0L
+)

@@ -140,12 +140,12 @@
         <fix-data minSdk="ffffffffff800000" requiresApi="fffffffffe000000"/>
         <location
             file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/NotificationListener.kt"
-            line="112"
+            line="114"
             column="23"
-            startOffset="4137"
-            endLine="112"
+            startOffset="4233"
+            endLine="114"
             endColumn="42"
-            endOffset="4156"/>
+            endOffset="4252"/>
         <map>
             <entry
                 name="desc"
@@ -173,12 +173,12 @@
         <fix-data minSdk="ffffffffff800000" requiresApi="fffffffffe000000"/>
         <location
             file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/NotificationListener.kt"
-            line="119"
+            line="121"
             column="29"
-            startOffset="4408"
-            endLine="119"
+            startOffset="4504"
+            endLine="121"
             endColumn="54"
-            endOffset="4433"/>
+            endOffset="4529"/>
         <map>
             <entry
                 name="desc"
@@ -206,12 +206,12 @@
         <fix-data missing="android.permission.POST_NOTIFICATIONS"/>
         <location
             file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/NotificationListener.kt"
-            line="147"
+            line="149"
             column="9"
-            startOffset="5559"
-            endLine="147"
+            startOffset="5670"
+            endLine="149"
             endColumn="85"
-            endOffset="5635"/>
+            endOffset="5746"/>
     </incident>
 
     <incident
@@ -220,12 +220,12 @@
         message="The application should not provide its own launch screen">
         <location
             file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/SplashActivity.kt"
-            line="26"
+            line="18"
             column="7"
-            startOffset="783"
-            endLine="26"
+            startOffset="467"
+            endLine="18"
             endColumn="21"
-            endOffset="797"/>
+            endOffset="481"/>
         <map>
             <condition targetGE="31"/>
         </map>

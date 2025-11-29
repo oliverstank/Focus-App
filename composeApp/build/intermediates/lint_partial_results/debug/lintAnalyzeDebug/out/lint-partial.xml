@@ -56,9 +56,25 @@
             </map>
     </map>
     <map id="UnusedResources">
+        <location id="R.drawable.ic_launcher_background"
+            file="${:composeApp*debug*MAIN*sourceProvider*0*resDir*1}/drawable/ic_launcher_background.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="170"
+            endColumn="10"
+            endOffset="5605"/>
+        <location id="R.drawable.ic_launcher_foreground"
+            file="${:composeApp*debug*MAIN*sourceProvider*0*resDir*1}/drawable-v24/ic_launcher_foreground.xml"
+            line="1"
+            column="1"
+            startOffset="0"
+            endLine="30"
+            endColumn="10"
+            endOffset="1702"/>
         <entry
             name="model"
-            string="drawable[ic_launcher_background(U),ic_launcher_foreground(U),ic_launcher_foreground_1(R)],font[led_dot_matrix(R)],mipmap[ic_launcher(U),ic_launcher_round(U)],string[app_name(U)],style[Theme_AppCompat_NoActionBar(R)];1^2,4^0^1,5^0^1;;;"/>
+            string="drawable[ic_launcher_background(D),ic_launcher_foreground(D),ic_launcher_foreground_1(E)],font[led_dot_matrix(R)],mipmap[ic_launcher(U),ic_launcher_round(U)],string[app_name(U)],style[Theme_AppCompat_NoActionBar(R)];1^2;;;"/>
     </map>
 
 </incidents>

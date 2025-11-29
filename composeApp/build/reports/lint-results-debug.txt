@@ -10,10 +10,10 @@
 /Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/DumbModeViewModel.kt:99: Error: Call requires API level 29 (current min is 24): android.app.AppOpsManager#unsafeCheckOpNoThrow [NewApi]
         val mode = appOpsManager.unsafeCheckOpNoThrow(
                                  ~~~~~~~~~~~~~~~~~~~~
-/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/NotificationListener.kt:112: Error: Call requires API level 26 (current min is 24): android.app.NotificationChannel() [NewApi]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/NotificationListener.kt:114: Error: Call requires API level 26 (current min is 24): android.app.NotificationChannel() [NewApi]
         val channel = NotificationChannel(
                       ~~~~~~~~~~~~~~~~~~~
-/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/NotificationListener.kt:119: Error: Call requires API level 26 (current min is 24): android.app.NotificationManager#createNotificationChannel [NewApi]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/NotificationListener.kt:121: Error: Call requires API level 26 (current min is 24): android.app.NotificationManager#createNotificationChannel [NewApi]
         notificationManager.createNotificationChannel(channel)
                             ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -63,7 +63,7 @@
 
    https://developer.android.com/distribute/best-practices/develop/target-sdk.html
 
-/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/SplashActivity.kt:26: Warning: The application should not provide its own launch screen [CustomSplashScreen]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/SplashActivity.kt:18: Warning: The application should not provide its own launch screen [CustomSplashScreen]
 class SplashActivity : AppCompatActivity() {
       ~~~~~~~~~~~~~~
 
@@ -133,15 +133,6 @@ agp = "8.7.3"
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
-/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/SplashActivity.kt:175: Error: Could not find property setter method setLogoAlpha on com.cactus.example.NothingAnimationView [ObjectAnimatorBinding]
-        val fadeInLogo = ObjectAnimator.ofFloat(this, "logoAlpha", 0f, 1f).apply {
-                                                      ~~~~~~~~~~~
-
-   Explanation for issues of type "ObjectAnimatorBinding":
-   This check cross references properties referenced by String from
-   ObjectAnimator and PropertyValuesHolder method calls and ensures that the
-   corresponding setter methods exist and have the right signatures.
-
 /Users/mac/Desktop/hackathonforcactus/composeApp/build.gradle.kts:31: Warning: Missing x86_64 ABI support for ChromeOS [ChromeOsAbiSupport]
             abiFilters += listOf("arm64-v8a", "armeabi-v7a")
                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -186,23 +177,64 @@ agp = "8.7.3"
    Identifier: androidx.compose.runtime
    Feedback: https://issuetracker.google.com/issues/new?component=612128
 
-/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-anydpi-v26/ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/drawable/ic_launcher_background.xml:2: Warning: The resource R.drawable.ic_launcher_background appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
 ^
-/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-anydpi-v26/ic_launcher_round.xml:2: Warning: The application adaptive roundIcon is missing a monochrome tag [MonochromeLauncherIcon]
-<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/drawable-v24/ic_launcher_foreground.xml:1: Warning: The resource R.drawable.ic_launcher_foreground appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
 ^
 
-   Explanation for issues of type "MonochromeLauncherIcon":
-   If android:roundIcon and android:icon are both in your manifest, you must
-   either remove the reference to android:roundIcon if it is not needed; or,
-   supply the monochrome icon in the drawable defined by the android:roundIcon
-   and android:icon attribute.
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
 
-   For example, if android:roundIcon and android:icon are both in the
-   manifest, a launcher might choose to use android:roundIcon over
-   android:icon to display the adaptive app icon. Therefore, your themed
-   application iconwill not show if your monochrome attribute is not also
-   specified in android:roundIcon.
 
-7 errors, 15 warnings
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-hdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-mdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-hdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-mdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+
+   Explanation for issues of type "IconLauncherShape":
+   According to the Android Design Guide
+   (https://d.android.com/r/studio-ui/designer/material/iconography) your
+   launcher icons should "use a distinct silhouette", a "three-dimensional,
+   front view, with a slight perspective as if viewed from above, so that
+   users perceive some depth."
+
+   The unique silhouette implies that your launcher icon should not be a
+   filled square.
+
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png: Warning: The image ic_launcher.png varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher.png: 512x512 dp (768x768 px), mipmap-mdpi/ic_launcher.png: 768x768 dp (768x768 px), mipmap-xhdpi/ic_launcher.png: 384x384 dp (768x768 px), mipmap-xxhdpi/ic_launcher.png: 256x256 dp (768x768 px), mipmap-xxxhdpi/ic_launcher.png: 192x192 dp (768x768 px) [IconDipSize]
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png: Warning: The image ic_launcher_round.png varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher_round.png: 512x512 dp (768x768 px), mipmap-mdpi/ic_launcher_round.png: 768x768 dp (768x768 px), mipmap-xhdpi/ic_launcher_round.png: 384x384 dp (768x768 px), mipmap-xxhdpi/ic_launcher_round.png: 256x256 dp (768x768 px), mipmap-xxxhdpi/ic_launcher_round.png: 192x192 dp (768x768 px) [IconDipSize]
+
+   Explanation for issues of type "IconDipSize":
+   Checks the all icons which are provided in multiple densities, all compute
+   to roughly the same density-independent pixel (dip) size. This catches
+   errors where images are either placed in the wrong folder, or icons are
+   changed to new sizes but some folders are forgotten.
+
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png: Warning: The following unrelated icon files have identical contents: ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png [IconDuplicates]
+
+   Explanation for issues of type "IconDuplicates":
+   If an icon is repeated under different names, you can consolidate and just
+   use one of the icons and delete the others to make your application
+   smaller. However, duplicated icons usually are not intentional and can
+   sometimes point to icons that were accidentally overwritten or accidentally
+   not updated.
+
+6 errors, 28 warnings

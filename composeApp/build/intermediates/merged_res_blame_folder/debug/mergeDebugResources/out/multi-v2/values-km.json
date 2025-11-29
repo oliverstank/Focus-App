@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.cactus.example.composeApp-mergeDebugResources-51:/values-km/values-km.xml",
+            "outputFile": "com.cactus.example.composeApp-mergeDebugResources-58:/values-km/values-km.xml",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/01b0476a98329b30d37818b820214e3a/transformed/foundation-release/res/values-km/values-km.xml",

@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 7 errors and 15 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 6 errors and 28 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Sat Nov 29 00:48:10 GMT 2025 by AGP (8.7.3)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Sat Nov 29 01:28:13 GMT 2025 by AGP (8.7.3)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -192,11 +192,13 @@ document.getElementById(id).style.display = 'none';
       <a class="mdl-navigation__link" href="#QueryPermissionsNeeded"><i class="material-icons warning-icon">warning</i>Using APIs affected by query permissions (1)</a>
       <a class="mdl-navigation__link" href="#AndroidGradlePluginVersion"><i class="material-icons warning-icon">warning</i>Obsolete Android Gradle Plugin Version (3)</a>
       <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (5)</a>
-      <a class="mdl-navigation__link" href="#ObjectAnimatorBinding"><i class="material-icons error-icon">error</i>Incorrect ObjectAnimator Property (1)</a>
       <a class="mdl-navigation__link" href="#ChromeOsAbiSupport"><i class="material-icons warning-icon">warning</i>Missing ABI Support for ChromeOS (1)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
       <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (1)</a>
-      <a class="mdl-navigation__link" href="#MonochromeLauncherIcon"><i class="material-icons warning-icon">warning</i>Monochrome icon is not defined (2)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (2)</a>
+      <a class="mdl-navigation__link" href="#IconLauncherShape"><i class="material-icons warning-icon">warning</i>The launcher icon shape should use a distinct silhouette (10)</a>
+      <a class="mdl-navigation__link" href="#IconDipSize"><i class="material-icons warning-icon">warning</i>Icon density-independent size validation (2)</a>
+      <a class="mdl-navigation__link" href="#IconDuplicates"><i class="material-icons warning-icon">warning</i>Duplicated icons under different names (1)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -229,9 +231,6 @@ document.getElementById(id).style.display = 'none';
 <tr>
 <td class="countColumn">5</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
-<tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
-<a href="#ObjectAnimatorBinding">ObjectAnimatorBinding</a>: Incorrect ObjectAnimator Property</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness:Chrome OS">Correctness:Chrome OS</a>
 </td></tr>
 <tr>
@@ -245,11 +244,20 @@ document.getElementById(id).style.display = 'none';
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AutoboxingStateCreation">AutoboxingStateCreation</a>: <code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead.</td></tr>
+<tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability:Icons">Usability:Icons</a>
 </td></tr>
 <tr>
+<td class="countColumn">10</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#IconLauncherShape">IconLauncherShape</a>: The launcher icon shape should use a distinct silhouette</td></tr>
+<tr>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#MonochromeLauncherIcon">MonochromeLauncherIcon</a>: Monochrome icon is not defined</td></tr>
+<a href="#IconDipSize">IconDipSize</a>: Icon density-independent size validation</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#IconDuplicates">IconDuplicates</a>: Duplicated icons under different names</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (63)</a>
 </td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (43)</a>
@@ -310,24 +318,24 @@ Dismiss</button>            </div>
 <span class="lineno"> 102 </span>          context.packageName
 </pre>
 
-<span class="location"><a href="../../src/androidMain/kotlin/com/cactus/example/NotificationListener.kt">../../src/androidMain/kotlin/com/cactus/example/NotificationListener.kt</a>:112</span>: <span class="message">Call requires API level 26 (current min is 24): <code>android.app.NotificationChannel()</code></span><br /><pre class="errorlines">
-<span class="lineno"> 109 </span>  <span class="keyword">val</span> notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) <span class="keyword">as</span> NotificationManager
-<span class="lineno"> 110 </span>
-<span class="lineno"> 111 </span>  <span class="comment">// Create notification channel</span>
-<span class="caretline"><span class="lineno"> 112 </span>  <span class="keyword">val</span> channel = <span class="error">NotificationChannel</span>(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 113 </span>      <span class="string">"priority_notifications"</span>,
-<span class="lineno"> 114 </span>      <span class="string">"Priority Notifications"</span>,
-<span class="lineno"> 115 </span>      NotificationManager.IMPORTANCE_HIGH
+<span class="location"><a href="../../src/androidMain/kotlin/com/cactus/example/NotificationListener.kt">../../src/androidMain/kotlin/com/cactus/example/NotificationListener.kt</a>:114</span>: <span class="message">Call requires API level 26 (current min is 24): <code>android.app.NotificationChannel()</code></span><br /><pre class="errorlines">
+<span class="lineno"> 111 </span>  <span class="keyword">val</span> notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) <span class="keyword">as</span> NotificationManager
+<span class="lineno"> 112 </span>
+<span class="lineno"> 113 </span>  <span class="comment">// Create notification channel</span>
+<span class="caretline"><span class="lineno"> 114 </span>  <span class="keyword">val</span> channel = <span class="error">NotificationChannel</span>(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 115 </span>      <span class="string">"priority_notifications"</span>,
+<span class="lineno"> 116 </span>      <span class="string">"Priority Notifications"</span>,
+<span class="lineno"> 117 </span>      NotificationManager.IMPORTANCE_HIGH
 </pre>
 
-<span class="location"><a href="../../src/androidMain/kotlin/com/cactus/example/NotificationListener.kt">../../src/androidMain/kotlin/com/cactus/example/NotificationListener.kt</a>:119</span>: <span class="message">Call requires API level 26 (current min is 24): <code>android.app.NotificationManager#createNotificationChannel</code></span><br /><pre class="errorlines">
-<span class="lineno"> 116 </span>        ).apply {
-<span class="lineno"> 117 </span>            description = <span class="string">"High priority notifications in focus mode"</span>
-<span class="lineno"> 118 </span>        }
-<span class="caretline"><span class="lineno"> 119 </span>        notificationManager.<span class="error">createNotificationChannel</span>(channel)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 120 </span>
-<span class="lineno"> 121 </span>        <span class="comment">// Create intent to unlock the app temporarily</span>
-<span class="lineno"> 122 </span>        <span class="keyword">val</span> unlockIntent = Intent(<span class="keyword">this</span>, UnlockReceiver::<span class="keyword">class</span>.java).apply {
+<span class="location"><a href="../../src/androidMain/kotlin/com/cactus/example/NotificationListener.kt">../../src/androidMain/kotlin/com/cactus/example/NotificationListener.kt</a>:121</span>: <span class="message">Call requires API level 26 (current min is 24): <code>android.app.NotificationManager#createNotificationChannel</code></span><br /><pre class="errorlines">
+<span class="lineno"> 118 </span>        ).apply {
+<span class="lineno"> 119 </span>            description = <span class="string">"High priority notifications in focus mode"</span>
+<span class="lineno"> 120 </span>        }
+<span class="caretline"><span class="lineno"> 121 </span>        notificationManager.<span class="error">createNotificationChannel</span>(channel)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 122 </span>
+<span class="lineno"> 123 </span>        <span class="comment">// Create intent to unlock the app temporarily</span>
+<span class="lineno"> 124 </span>        <span class="keyword">val</span> unlockIntent = Intent(<span class="keyword">this</span>, UnlockReceiver::<span class="keyword">class</span>.java).apply {
 </pre>
 
 </div>
@@ -424,13 +432,13 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/androidMain/kotlin/com/cactus/example/SplashActivity.kt">../../src/androidMain/kotlin/com/cactus/example/SplashActivity.kt</a>:26</span>: <span class="message">The application should not provide its own launch screen</span><br /><pre class="errorlines">
-<span class="lineno">  23 </span><span class="javadoc">/**
-</span><span class="lineno">  24 </span><span class="javadoc"> * Splash Activity with Nothing-style dot matrix animation
-</span><span class="lineno">  25 </span><span class="javadoc"> */</span>
-<span class="caretline"><span class="lineno">  26 </span><span class="keyword">class</span> <span class="warning">SplashActivity</span> : AppCompatActivity() {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  27 </span>
-<span class="lineno">  28 </span>    private lateinit <span class="keyword">var</span> animationView: NothingAnimationView
+<span class="location"><a href="../../src/androidMain/kotlin/com/cactus/example/SplashActivity.kt">../../src/androidMain/kotlin/com/cactus/example/SplashActivity.kt</a>:18</span>: <span class="message">The application should not provide its own launch screen</span><br /><pre class="errorlines">
+<span class="lineno">  15 </span><span class="javadoc">/**
+</span><span class="lineno">  16 </span><span class="javadoc"> * Splash Activity with Nothing-style dot matrix animation
+</span><span class="lineno">  17 </span><span class="javadoc"> */</span>
+<span class="caretline"><span class="lineno">  18 </span><span class="keyword">class</span> <span class="warning">SplashActivity</span> : AppCompatActivity() {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  19 </span>
+<span class="lineno">  20 </span>    private lateinit <span class="keyword">var</span> animationView: NothingAnimationView
 </pre>
 
 </div>
@@ -653,51 +661,6 @@ To suppress this error, use the issue id "GradleDependency" as explained in the 
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="GradleDependencyCardLink" onclick="hideid('GradleDependencyCard');">
 Dismiss</button>            </div>
             </div>
-          </section><a name="ObjectAnimatorBinding"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ObjectAnimatorBindingCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Incorrect ObjectAnimator Property</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../src/androidMain/kotlin/com/cactus/example/SplashActivity.kt">../../src/androidMain/kotlin/com/cactus/example/SplashActivity.kt</a>:175</span>: <span class="message">Could not find property setter method <code>setLogoAlpha</code> on <code>com.cactus.example.NothingAnimationView</code></span><br /><pre class="errorlines">
-<span class="lineno"> 172 </span>            }
-<span class="lineno"> 173 </span>        }
-<span class="lineno"> 174 </span>
-<span class="caretline"><span class="lineno"> 175 </span>        <span class="keyword">val</span> fadeInLogo = ObjectAnimator.ofFloat(<span class="keyword">this</span>, <span class="error"><span class="string">"logoAlpha"</span></span>, <span class="number">0f</span>, <span class="number">1f</span>).apply {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 176 </span>            duration = <span class="number">400</span>
-<span class="lineno"> 177 </span>            startDelay = <span class="number">800</span>
-<span class="lineno"> 178 </span>        }
-</pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationObjectAnimatorBinding" style="display: none;">
-This check cross references properties referenced by String from <code>ObjectAnimator</code> and <code>PropertyValuesHolder</code> method calls and ensures that the corresponding setter methods exist and have the right signatures.<br/>To suppress this error, use the issue id "ObjectAnimatorBinding" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">ObjectAnimatorBinding</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Correctness</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Error</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 4/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationObjectAnimatorBindingLink" onclick="reveal('explanationObjectAnimatorBinding');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ObjectAnimatorBindingCardLink" onclick="hideid('ObjectAnimatorBindingCard');">
-Dismiss</button>            </div>
-            </div>
           </section>
 <a name="Correctness:Chrome OS"></a>
 <a name="ChromeOsAbiSupport"></a>
@@ -841,42 +804,96 @@ Feedback: <a href="https://issuetracker.google.com/issues/new?component=612128">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="AutoboxingStateCreationCardLink" onclick="hideid('AutoboxingStateCreationCard');">
 Dismiss</button>            </div>
             </div>
-          </section>
-<a name="Usability:Icons"></a>
-<a name="MonochromeLauncherIcon"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="MonochromeLauncherIconCard" style="display: block;">
+          </section><a name="UnusedResources"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UnusedResourcesCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Monochrome icon is not defined</h2>
+    <h2 class="mdl-card__title-text">Unused resources</h2>
   </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/androidMain/res/mipmap-anydpi-v26/ic_launcher.xml">../../src/androidMain/res/mipmap-anydpi-v26/ic_launcher.xml</a>:2</span>: <span class="message">The application adaptive icon is missing a monochrome tag</span><br /><pre class="errorlines">
-<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;adaptive-icon</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 3 </span>    <span class="tag">&lt;background</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@drawable/ic_launcher_background"</span> />
-<span class="lineno"> 4 </span>    <span class="tag">&lt;foreground</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@drawable/ic_launcher_foreground"</span> />
-<span class="lineno"> 5 </span><span class="tag">&lt;/adaptive-icon></span></pre>
+<span class="location"><a href="../../src/androidMain/res/drawable/ic_launcher_background.xml">../../src/androidMain/res/drawable/ic_launcher_background.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.ic_launcher_background</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">   1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno">   2 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">   3 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"108dp"</span>
+<span class="lineno">   4 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"108dp"</span>
+<span class="lineno">   5 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"108"</span></pre>
 
-<span class="location"><a href="../../src/androidMain/res/mipmap-anydpi-v26/ic_launcher_round.xml">../../src/androidMain/res/mipmap-anydpi-v26/ic_launcher_round.xml</a>:2</span>: <span class="message">The application adaptive roundIcon is missing a monochrome tag</span><br /><pre class="errorlines">
-<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;adaptive-icon</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 3 </span>    <span class="tag">&lt;background</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@drawable/ic_launcher_background"</span> />
-<span class="lineno"> 4 </span>    <span class="tag">&lt;foreground</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@drawable/ic_launcher_foreground"</span> />
-<span class="lineno"> 5 </span><span class="tag">&lt;/adaptive-icon></span></pre>
+<span class="location"><a href="../../src/androidMain/res/drawable-v24/ic_launcher_foreground.xml">../../src/androidMain/res/drawable-v24/ic_launcher_foreground.xml</a>:1</span>: <span class="message">The resource <code>R.drawable.ic_launcher_foreground</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="caretline"><span class="lineno">  1 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  2 </span>    <span class="prefix">xmlns:</span><span class="attribute">aapt</span>=<span class="value">"http://schemas.android.com/aapt"</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"108dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"108dp"</span></pre>
 
 </div>
-<div class="metadata"><div class="explanation" id="explanationMonochromeLauncherIcon" style="display: none;">
-If <code>android:roundIcon</code> and <code>android:icon</code> are both in your manifest, you must either remove the reference to <code>android:roundIcon</code> if it is not needed; or, supply the monochrome icon in the drawable defined by the <code>android:roundIcon</code> and <code>android:icon</code> attribute.<br/>
+<div class="metadata"><div class="explanation" id="explanationUnusedResources" style="display: none;">
+Unused resources make applications larger and slow down builds.<br/>
 <br/>
-For example, if <code>android:roundIcon</code> and <code>android:icon</code> are both in the manifest, a launcher might choose to use <code>android:roundIcon</code> over <code>android:icon</code> to display the adaptive app icon. Therefore, your themed application iconwill not show if your monochrome attribute is not also specified in <code>android:roundIcon</code>.<br/>To suppress this error, use the issue id "MonochromeLauncherIcon" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/>
+The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.<br/>
+<br/>
+You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.<br/>
+,<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "UnusedResources" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
 <br/></div>
 </div>
 </div>
 <div class="chips">
 <span class="mdl-chip">
-    <span class="mdl-chip__text">MonochromeLauncherIcon</span>
+    <span class="mdl-chip__text">UnusedResources</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Performance</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 3/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationUnusedResourcesLink" onclick="reveal('explanationUnusedResources');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="UnusedResourcesCardLink" onclick="hideid('UnusedResourcesCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Usability:Icons"></a>
+<a name="IconLauncherShape"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="IconLauncherShapeCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">The launcher icon shape should use a distinct silhouette</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/androidMain/res/mipmap-hdpi/ic_launcher.png">../../src/androidMain/res/mipmap-hdpi/ic_launcher.png</a></span>: <img class="embedimage" align="right" src="../../src/androidMain/res/mipmap-hdpi/ic_launcher.png" /><span class="message">Launcher icons should not fill every pixel of their square region; see the design guide for details</span><br clear="right"/>
+<span class="location"><a href="../../src/androidMain/res/mipmap-mdpi/ic_launcher.png">../../src/androidMain/res/mipmap-mdpi/ic_launcher.png</a></span>: <img class="embedimage" align="right" src="../../src/androidMain/res/mipmap-mdpi/ic_launcher.png" /><span class="message">Launcher icons should not fill every pixel of their square region; see the design guide for details</span><br clear="right"/>
+<span class="location"><a href="../../src/androidMain/res/mipmap-xhdpi/ic_launcher.png">../../src/androidMain/res/mipmap-xhdpi/ic_launcher.png</a></span>: <img class="embedimage" align="right" src="../../src/androidMain/res/mipmap-xhdpi/ic_launcher.png" /><span class="message">Launcher icons should not fill every pixel of their square region; see the design guide for details</span><br clear="right"/>
+<span class="location"><a href="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher.png">../../src/androidMain/res/mipmap-xxhdpi/ic_launcher.png</a></span>: <img class="embedimage" align="right" src="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher.png" /><span class="message">Launcher icons should not fill every pixel of their square region; see the design guide for details</span><br clear="right"/>
+<span class="location"><a href="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png">../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png</a></span>: <img class="embedimage" align="right" src="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png" /><span class="message">Launcher icons should not fill every pixel of their square region; see the design guide for details</span><br clear="right"/>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="IconLauncherShapeDivLink" onclick="reveal('IconLauncherShapeDiv');" />+ 5 More Occurrences...</button>
+<div id="IconLauncherShapeDiv" style="display: none">
+<span class="location"><a href="../../src/androidMain/res/mipmap-hdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-hdpi/ic_launcher_round.png</a></span>: <img class="embedimage" align="right" src="../../src/androidMain/res/mipmap-hdpi/ic_launcher_round.png" /><span class="message">Launcher icon used as round icon did not have a circular shape</span><br clear="right"/>
+<span class="location"><a href="../../src/androidMain/res/mipmap-mdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-mdpi/ic_launcher_round.png</a></span>: <img class="embedimage" align="right" src="../../src/androidMain/res/mipmap-mdpi/ic_launcher_round.png" /><span class="message">Launcher icon used as round icon did not have a circular shape</span><br clear="right"/>
+<span class="location"><a href="../../src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png</a></span>: <img class="embedimage" align="right" src="../../src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png" /><span class="message">Launcher icon used as round icon did not have a circular shape</span><br clear="right"/>
+<span class="location"><a href="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png</a></span>: <img class="embedimage" align="right" src="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png" /><span class="message">Launcher icon used as round icon did not have a circular shape</span><br clear="right"/>
+<span class="location"><a href="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png</a></span>: <img class="embedimage" align="right" src="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png" /><span class="message">Launcher icon used as round icon did not have a circular shape</span><br clear="right"/>
+</div>
+</div>
+<div class="metadata"><div class="explanation" id="explanationIconLauncherShape" style="display: none;">
+According to the Android Design Guide (<a href="https://d.android.com/r/studio-ui/designer/material/iconography">https://d.android.com/r/studio-ui/designer/material/iconography</a>) your launcher icons should "use a distinct silhouette", a "three-dimensional, front view, with a slight perspective as if viewed from above, so that users perceive some depth."<br/>
+<br/>
+The unique silhouette implies that your launcher icon should not be a filled square.<br/>To suppress this error, use the issue id "IconLauncherShape" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">IconLauncherShape</span>
 </span>
 <span class="mdl-chip">
     <span class="mdl-chip__text">Icons</span>
@@ -893,8 +910,148 @@ For example, if <code>android:roundIcon</code> and <code>android:icon</code> are
 </div>
               </div>
               <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationMonochromeLauncherIconLink" onclick="reveal('explanationMonochromeLauncherIcon');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="MonochromeLauncherIconCardLink" onclick="hideid('MonochromeLauncherIconCard');">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationIconLauncherShapeLink" onclick="reveal('explanationIconLauncherShape');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="IconLauncherShapeCardLink" onclick="hideid('IconLauncherShapeCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="IconDipSize"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="IconDipSizeCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Icon density-independent size validation</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png">../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png</a></span>: <span class="message">The image <code>ic_launcher.png</code> varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher.png: 512x512 dp (768x768 px), mipmap-mdpi/ic_launcher.png: 768x768 dp (768x768 px), mipmap-xhdpi/ic_launcher.png: 384x384 dp (768x768 px), mipmap-xxhdpi/ic_launcher.png: 256x256 dp (768x768 px), mipmap-xxxhdpi/ic_launcher.png: 192x192 dp (768x768 px)</span><br />
+<ul></ul><button id="Location1DivLink" onclick="reveal('Location1Div');" />+ 4 Additional Locations...</button>
+<div id="Location1Div" style="display: none">
+Additional locations: <ul>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher.png">../../src/androidMain/res/mipmap-xxhdpi/ic_launcher.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-xhdpi/ic_launcher.png">../../src/androidMain/res/mipmap-xhdpi/ic_launcher.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-hdpi/ic_launcher.png">../../src/androidMain/res/mipmap-hdpi/ic_launcher.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-mdpi/ic_launcher.png">../../src/androidMain/res/mipmap-mdpi/ic_launcher.png</a></span>
+</ul>
+</div><br/><br/>
+<table>
+<tr><td><a href="../../src/androidMain/res/mipmap-mdpi/ic_launcher.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-mdpi/ic_launcher.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-hdpi/ic_launcher.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-hdpi/ic_launcher.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-xhdpi/ic_launcher.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-xhdpi/ic_launcher.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png" /></a>
+</td></tr><tr><th></th><th></th><th></th><th></th><th></th></tr>
+</table>
+<span class="location"><a href="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png</a></span>: <span class="message">The image <code>ic_launcher_round.png</code> varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher_round.png: 512x512 dp (768x768 px), mipmap-mdpi/ic_launcher_round.png: 768x768 dp (768x768 px), mipmap-xhdpi/ic_launcher_round.png: 384x384 dp (768x768 px), mipmap-xxhdpi/ic_launcher_round.png: 256x256 dp (768x768 px), mipmap-xxxhdpi/ic_launcher_round.png: 192x192 dp (768x768 px)</span><br />
+<ul></ul><button id="Location2DivLink" onclick="reveal('Location2Div');" />+ 4 Additional Locations...</button>
+<div id="Location2Div" style="display: none">
+Additional locations: <ul>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-hdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-hdpi/ic_launcher_round.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-mdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-mdpi/ic_launcher_round.png</a></span>
+</ul>
+</div><br/><br/>
+<table>
+<tr><td><a href="../../src/androidMain/res/mipmap-mdpi/ic_launcher_round.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-mdpi/ic_launcher_round.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-hdpi/ic_launcher_round.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-hdpi/ic_launcher_round.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png" /></a>
+</td></tr><tr><th></th><th></th><th></th><th></th><th></th></tr>
+</table>
+</div>
+<div class="metadata"><div class="explanation" id="explanationIconDipSize" style="display: none;">
+Checks the all icons which are provided in multiple densities, all compute to roughly the same density-independent pixel (<code>dip</code>) size. This catches errors where images are either placed in the wrong folder, or icons are changed to new sizes but some folders are forgotten.<br/>To suppress this error, use the issue id "IconDipSize" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">IconDipSize</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Icons</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Usability</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 5/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationIconDipSizeLink" onclick="reveal('explanationIconDipSize');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="IconDipSizeCardLink" onclick="hideid('IconDipSizeCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="IconDuplicates"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="IconDuplicatesCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Duplicated icons under different names</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png</a></span>: <span class="message">The following unrelated icon files have identical contents: ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png</span><br />
+<ul></ul><button id="Location1DivLink" onclick="reveal('Location1Div');" />+ 9 Additional Locations...</button>
+<div id="Location1Div" style="display: none">
+Additional locations: <ul>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png">../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher.png">../../src/androidMain/res/mipmap-xxhdpi/ic_launcher.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-xhdpi/ic_launcher.png">../../src/androidMain/res/mipmap-xhdpi/ic_launcher.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-mdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-mdpi/ic_launcher_round.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-mdpi/ic_launcher.png">../../src/androidMain/res/mipmap-mdpi/ic_launcher.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-hdpi/ic_launcher_round.png">../../src/androidMain/res/mipmap-hdpi/ic_launcher_round.png</a></span>
+<li> <span class="location"><a href="../../src/androidMain/res/mipmap-hdpi/ic_launcher.png">../../src/androidMain/res/mipmap-hdpi/ic_launcher.png</a></span>
+</ul>
+</div><br/><br/>
+<table>
+<tr><td><a href="../../src/androidMain/res/mipmap-mdpi/ic_launcher.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-mdpi/ic_launcher.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-mdpi/ic_launcher_round.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-mdpi/ic_launcher_round.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-hdpi/ic_launcher.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-hdpi/ic_launcher.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-hdpi/ic_launcher_round.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-hdpi/ic_launcher_round.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-xhdpi/ic_launcher.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-xhdpi/ic_launcher.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png" /></a>
+</td><td><a href="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png"><img border="0" align="top" src="../../src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png" /></a>
+</td></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+</table>
+</div>
+<div class="metadata"><div class="explanation" id="explanationIconDuplicates" style="display: none;">
+If an icon is repeated under different names, you can consolidate and just use one of the icons and delete the others to make your application smaller. However, duplicated icons usually are not intentional and can sometimes point to icons that were accidentally overwritten or accidentally not updated.<br/>To suppress this error, use the issue id "IconDuplicates" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">IconDuplicates</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Icons</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Usability</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 3/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationIconDuplicatesLink" onclick="reveal('explanationIconDuplicates');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="IconDuplicatesCardLink" onclick="hideid('IconDuplicatesCard');">
 Dismiss</button>            </div>
             </div>
           </section>

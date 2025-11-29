@@ -24,6 +24,12 @@ class FocusModeViewModel : ViewModel() {
     private val _queuedNotifications = MutableStateFlow<List<QueuedNotification>>(emptyList())
     val queuedNotifications: StateFlow<List<QueuedNotification>> = _queuedNotifications.asStateFlow()
 
+    private val _importantNotifications = MutableStateFlow<List<CategorizedNotification>>(emptyList())
+    val importantNotifications: StateFlow<List<CategorizedNotification>> = _importantNotifications.asStateFlow()
+
+    private val _unimportantNotifications = MutableStateFlow<List<CategorizedNotification>>(emptyList())
+    val unimportantNotifications: StateFlow<List<CategorizedNotification>> = _unimportantNotifications.asStateFlow()
+
     init {
         viewModelScope.launch {
             FocusModeRepository.settings.collect { settings ->
@@ -33,6 +39,16 @@ class FocusModeViewModel : ViewModel() {
         viewModelScope.launch {
             FocusModeRepository.queuedNotifications.collect { notifications ->
                 _queuedNotifications.value = notifications
+            }
+        }
+        viewModelScope.launch {
+            FocusModeRepository.importantNotifications.collect { notifications ->
+                _importantNotifications.value = notifications
+            }
+        }
+        viewModelScope.launch {
+            FocusModeRepository.unimportantNotifications.collect { notifications ->
+                _unimportantNotifications.value = notifications
             }
         }
     }
@@ -148,5 +164,13 @@ class FocusModeViewModel : ViewModel() {
 
     fun clearQueuedNotifications() {
         FocusModeRepository.clearQueuedNotifications()
+    }
+
+    fun getUnimportantNotificationCount(): Int {
+        return FocusModeRepository.getUnimportantNotificationCount()
+    }
+
+    fun clearCategorizedNotifications() {
+        FocusModeRepository.clearCategorizedNotifications()
     }
 }

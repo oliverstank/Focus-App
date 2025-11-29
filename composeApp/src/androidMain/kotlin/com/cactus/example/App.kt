@@ -11,8 +11,10 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -21,12 +23,17 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
+import kotlinx.coroutines.delay
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.max
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -37,32 +44,35 @@ fun App() {
         Scaffold(
             containerColor = MaterialTheme.colorScheme.background,
             bottomBar = {
-                NavigationBar(
-                    containerColor = MaterialTheme.colorScheme.surface,
-                    contentColor = MaterialTheme.colorScheme.onSurface
-                ) {
-                    NavigationBarItem(
-                        selected = selectedTab == 0,
-                        onClick = { selectedTab = 0 },
-                        icon = {
-                            Text(
-                                "NOTIFICATIONS",
-                                style = MaterialTheme.typography.labelMedium,
-                                fontWeight = if (selectedTab == 0) FontWeight.Bold else FontWeight.Normal
-                            )
-                        }
-                    )
-                    NavigationBarItem(
-                        selected = selectedTab == 1,
-                        onClick = { selectedTab = 1 },
-                        icon = {
-                            Text(
-                                "FOCUS MODE",
-                                style = MaterialTheme.typography.labelMedium,
-                                fontWeight = if (selectedTab == 1) FontWeight.Bold else FontWeight.Normal
-                            )
-                        }
-                    )
+                Column {
+                    ProcessingStatusBar()
+                    NavigationBar(
+                        containerColor = MaterialTheme.colorScheme.surface,
+                        contentColor = MaterialTheme.colorScheme.onSurface
+                    ) {
+                        NavigationBarItem(
+                            selected = selectedTab == 0,
+                            onClick = { selectedTab = 0 },
+                            icon = {
+                                Text(
+                                    "NOTIFICATIONS",
+                                    style = MaterialTheme.typography.labelMedium,
+                                    fontWeight = if (selectedTab == 0) FontWeight.Bold else FontWeight.Normal
+                                )
+                            }
+                        )
+                        NavigationBarItem(
+                            selected = selectedTab == 1,
+                            onClick = { selectedTab = 1 },
+                            icon = {
+                                Text(
+                                    "FOCUS MODE",
+                                    style = MaterialTheme.typography.labelMedium,
+                                    fontWeight = if (selectedTab == 1) FontWeight.Bold else FontWeight.Normal
+                                )
+                            }
+                        )
+                    }
                 }
             }
         ) { paddingValues ->
@@ -74,11 +84,127 @@ fun App() {
     }
 }
 
+@Composable
+fun ProcessingStatusBar() {
+    val context = LocalContext.current
+    val processingState by FocusModeRepository.processingState.collectAsState()
+    val pendingNotifications by FocusModeRepository.pendingNotifications.collectAsState()
+    var timeRemaining by remember { mutableStateOf(0L) }
+
+    // Update countdown every second
+    LaunchedEffect(processingState.nextScanTime) {
+        while (true) {
+            val remaining = max(0, processingState.nextScanTime - System.currentTimeMillis())
+            timeRemaining = remaining
+            delay(1000)
+        }
+    }
+
+    val minutes = (timeRemaining / 1000 / 60).toInt()
+    val seconds = ((timeRemaining / 1000) % 60).toInt()
+
+    val backgroundColor = when (processingState.status) {
+        ProcessingStatus.IDLE -> MaterialTheme.colorScheme.surfaceVariant
+        ProcessingStatus.SCANNING -> MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)
+        ProcessingStatus.FILTERING -> MaterialTheme.colorScheme.secondary.copy(alpha = 0.2f)
+        ProcessingStatus.ANALYZING_WITH_LLM -> MaterialTheme.colorScheme.tertiary.copy(alpha = 0.2f)
+        ProcessingStatus.COMPLETE -> MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)
+    }
+
+    val textColor = when (processingState.status) {
+        ProcessingStatus.IDLE -> MaterialTheme.colorScheme.onSurfaceVariant
+        ProcessingStatus.SCANNING -> MaterialTheme.colorScheme.primary
+        ProcessingStatus.FILTERING -> MaterialTheme.colorScheme.secondary
+        ProcessingStatus.ANALYZING_WITH_LLM -> MaterialTheme.colorScheme.tertiary
+        ProcessingStatus.COMPLETE -> MaterialTheme.colorScheme.primary
+    }
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(backgroundColor)
+            .padding(horizontal = 16.dp, vertical = 12.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = processingState.message,
+                    style = MaterialTheme.typography.labelMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = textColor,
+                    letterSpacing = 0.5.sp
+                )
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    if (processingState.status == ProcessingStatus.IDLE || processingState.status == ProcessingStatus.COMPLETE) {
+                        Text(
+                            text = "Next scan in ${String.format("%d:%02d", minutes, seconds)}",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = textColor.copy(alpha = 0.7f)
+                        )
+                    }
+                    if (pendingNotifications.isNotEmpty()) {
+                        Text(
+                            text = "• ${pendingNotifications.size} pending",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.error,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+            }
+
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                // Manual trigger button
+                if (processingState.status == ProcessingStatus.IDLE || processingState.status == ProcessingStatus.COMPLETE) {
+                    IconButton(
+                        onClick = {
+                            // Trigger worker immediately
+                            val workRequest = OneTimeWorkRequestBuilder<NotificationProcessingWorker>().build()
+                            WorkManager.getInstance(context).enqueue(workRequest)
+                        },
+                        modifier = Modifier
+                            .size(32.dp)
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(MaterialTheme.colorScheme.primary)
+                    ) {
+                        Icon(
+                            Icons.Default.PlayArrow,
+                            contentDescription = "Process now",
+                            tint = MaterialTheme.colorScheme.onPrimary,
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
+                }
+
+                if (processingState.status != ProcessingStatus.IDLE && processingState.status != ProcessingStatus.COMPLETE) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(20.dp),
+                        color = textColor,
+                        strokeWidth = 2.dp
+                    )
+                }
+            }
+        }
+    }
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NotificationSummaryScreen(modifier: Modifier = Modifier, viewModel: NotificationViewModel = viewModel()) {
     val uiState by viewModel.uiState.collectAsState()
     val notifications by viewModel.todayNotifications.collectAsState()
+    val importantNotifications by FocusModeRepository.importantNotifications.collectAsState()
+    val unimportantNotifications by FocusModeRepository.unimportantNotifications.collectAsState()
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
@@ -237,36 +363,75 @@ fun NotificationSummaryScreen(modifier: Modifier = Modifier, viewModel: Notifica
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                // Notifications list header
+                // High Alert Notifications header
+                Text(
+                    text = "HIGH ALERT NOTIFICATIONS FOR TODAY",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Black,
+                    letterSpacing = 1.2.sp,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+
+                // Important and Ignored counts
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 16.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
-                    Text(
-                        text = "TODAY",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Black,
-                        letterSpacing = 1.2.sp
-                    )
+                    // Important notifications count
                     Box(
                         modifier = Modifier
-                            .clip(RoundedCornerShape(8.dp))
-                            .background(MaterialTheme.colorScheme.primary)
-                            .padding(horizontal = 12.dp, vertical = 4.dp)
+                            .weight(1f)
+                            .clip(RoundedCornerShape(16.dp))
+                            .background(MaterialTheme.colorScheme.errorContainer)
+                            .padding(16.dp)
                     ) {
-                        Text(
-                            text = "${notifications.size}",
-                            style = MaterialTheme.typography.labelMedium,
-                            fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.onPrimary
-                        )
+                        Column {
+                            Text(
+                                text = "IMPORTANT",
+                                style = MaterialTheme.typography.labelMedium,
+                                fontWeight = FontWeight.Black,
+                                letterSpacing = 1.sp,
+                                color = MaterialTheme.colorScheme.onErrorContainer
+                            )
+                            Text(
+                                text = "${importantNotifications.size}",
+                                style = MaterialTheme.typography.displaySmall,
+                                fontWeight = FontWeight.Black,
+                                color = MaterialTheme.colorScheme.onErrorContainer
+                            )
+                        }
+                    }
+
+                    // Ignored notifications count
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .clip(RoundedCornerShape(16.dp))
+                            .background(MaterialTheme.colorScheme.surfaceVariant)
+                            .padding(16.dp)
+                    ) {
+                        Column {
+                            Text(
+                                text = "IGNORED",
+                                style = MaterialTheme.typography.labelMedium,
+                                fontWeight = FontWeight.Black,
+                                letterSpacing = 1.sp,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                            Text(
+                                text = "${unimportantNotifications.size}",
+                                style = MaterialTheme.typography.displaySmall,
+                                fontWeight = FontWeight.Black,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
                     }
                 }
 
-                if (notifications.isEmpty()) {
+                // Show important notifications
+                if (importantNotifications.isEmpty()) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -285,13 +450,13 @@ fun NotificationSummaryScreen(modifier: Modifier = Modifier, viewModel: Notifica
                             verticalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
                             Text(
-                                text = "NO NOTIFICATIONS",
+                                text = "NO IMPORTANT NOTIFICATIONS",
                                 style = MaterialTheme.typography.titleSmall,
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.onSurface
                             )
                             Text(
-                                text = "Enable notification access in Settings",
+                                text = "Your important notifications will appear here",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -301,8 +466,8 @@ fun NotificationSummaryScreen(modifier: Modifier = Modifier, viewModel: Notifica
                     LazyColumn(
                         verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
-                        items(notifications) { notification ->
-                            NotificationCard(notification)
+                        items(importantNotifications) { categorized ->
+                            NotificationCard(categorized.notification)
                         }
                     }
                 }
