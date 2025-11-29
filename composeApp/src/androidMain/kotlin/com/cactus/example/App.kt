@@ -14,6 +14,9 @@ import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.*
+import androidx.compose.material3.SwipeToDismissBox
+import androidx.compose.material3.SwipeToDismissBoxValue
+import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -501,25 +504,63 @@ fun NotificationSummaryScreen(modifier: Modifier = Modifier, viewModel: Notifica
                     LazyColumn(
                         verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
-                        items(importantNotifications) { categorized ->
-                            ImportantNotificationCard(
-                                notification = categorized.notification,
-                                onUnlock = {
-                                    // Temporarily unlock the app for 5 minutes
-                                    FocusModeRepository.addTemporaryUnlock(categorized.notification.packageName)
-
-                                    // Launch the app
-                                    try {
-                                        val launchIntent = context.packageManager.getLaunchIntentForPackage(
-                                            categorized.notification.packageName
-                                        )
-                                        if (launchIntent != null) {
-                                            context.startActivity(launchIntent)
-                                        }
-                                    } catch (e: Exception) {
-                                        android.util.Log.e("NotificationScreen", "Failed to launch app", e)
+                        items(
+                            items = importantNotifications,
+                            key = { it.notification.id }
+                        ) { categorized ->
+                            val dismissState = rememberSwipeToDismissBoxState(
+                                confirmValueChange = { dismissValue ->
+                                    if (dismissValue == SwipeToDismissBoxValue.EndToStart) {
+                                        FocusModeRepository.removeImportantNotification(categorized.notification.id)
+                                        true
+                                    } else {
+                                        false
                                     }
                                 }
+                            )
+
+                            SwipeToDismissBox(
+                                state = dismissState,
+                                backgroundContent = {
+                                    Box(
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .clip(RoundedCornerShape(16.dp))
+                                            .background(MaterialTheme.colorScheme.error)
+                                            .padding(horizontal = 20.dp),
+                                        contentAlignment = Alignment.CenterEnd
+                                    ) {
+                                        Icon(
+                                            Icons.Default.Clear,
+                                            contentDescription = "Delete",
+                                            tint = MaterialTheme.colorScheme.onError,
+                                            modifier = Modifier.size(24.dp)
+                                        )
+                                    }
+                                },
+                                content = {
+                                    ImportantNotificationCard(
+                                        notification = categorized.notification,
+                                        onUnlock = {
+                                            // Temporarily unlock the app for 5 minutes
+                                            FocusModeRepository.addTemporaryUnlock(categorized.notification.packageName)
+
+                                            // Launch the app
+                                            try {
+                                                val launchIntent = context.packageManager.getLaunchIntentForPackage(
+                                                    categorized.notification.packageName
+                                                )
+                                                if (launchIntent != null) {
+                                                    context.startActivity(launchIntent)
+                                                }
+                                            } catch (e: Exception) {
+                                                android.util.Log.e("NotificationScreen", "Failed to launch app", e)
+                                            }
+                                        }
+                                    )
+                                },
+                                enableDismissFromStartToEnd = false,
+                                enableDismissFromEndToStart = true
                             )
                         }
                     }

@@ -194,6 +194,20 @@ object FocusModeRepository {
         _unimportantNotifications.value = emptyList()
     }
 
+    // Remove a specific important notification
+    fun removeImportantNotification(notificationId: String) {
+        _importantNotifications.value = _importantNotifications.value.filter {
+            it.notification.id != notificationId
+        }
+    }
+
+    // Remove a specific unimportant notification
+    fun removeUnimportantNotification(notificationId: String) {
+        _unimportantNotifications.value = _unimportantNotifications.value.filter {
+            it.notification.id != notificationId
+        }
+    }
+
     // Get all notifications (for re-evaluation)
     fun getAllCategorizedNotifications(): List<NotificationData> {
         return (_importantNotifications.value.map { it.notification } +

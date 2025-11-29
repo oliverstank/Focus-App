@@ -29,14 +29,26 @@ class NotificationProcessingWorker(
 
             // Get new pending notifications
             val pendingNotifications = FocusModeRepository.getPendingNotificationsAndClear()
+            Log.d(TAG, "========================================")
+            Log.d(TAG, "QUEUE BREAKDOWN:")
+            Log.d(TAG, "  Pending notifications: ${pendingNotifications.size}")
+            pendingNotifications.forEachIndexed { index, notif ->
+                Log.d(TAG, "    [$index] ${notif.packageName}: ${notif.title}")
+            }
 
             // Get only unimportant notifications for re-evaluation
             // Important notifications are kept as-is and not re-evaluated
             val unimportantNotifications = FocusModeRepository.unimportantNotifications.value.map { it.notification }
+            Log.d(TAG, "  Unimportant for re-eval: ${unimportantNotifications.size}")
 
             // Combine new pending with existing unimportant for re-evaluation
             // Important notifications are never re-evaluated once categorized
-            val allNotifications = (pendingNotifications + unimportantNotifications).distinctBy { it.id }
+            val beforeDistinct = pendingNotifications + unimportantNotifications
+            Log.d(TAG, "  Combined before distinctBy: ${beforeDistinct.size}")
+
+            val allNotifications = beforeDistinct.distinctBy { it.id }
+            Log.d(TAG, "  After distinctBy (removed ${beforeDistinct.size - allNotifications.size} duplicates): ${allNotifications.size}")
+            Log.d(TAG, "========================================")
 
             if (allNotifications.isEmpty()) {
                 Log.d(TAG, "No notifications to process")
@@ -44,7 +56,7 @@ class NotificationProcessingWorker(
                 return@withContext Result.success()
             }
 
-            Log.d(TAG, "Processing ${allNotifications.size} notifications (${pendingNotifications.size} new, ${unimportantNotifications.size} unimportant for re-eval)")
+            Log.d(TAG, "SENDING TO LLM: ${allNotifications.size} notifications")
             FocusModeRepository.updateProcessingStatus(
                 ProcessingStatus.FILTERING,
                 "Processing ${allNotifications.size} notifications..."

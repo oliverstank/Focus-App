@@ -58,8 +58,8 @@ class NotificationViewModel : ViewModel() {
 
                 val prompt = """
                     You are a helpful assistant that summarizes notifications.
-                    First, in a [THINKING] block, analyze the notifications. Identify the most important ones, any patterns or trends, and suggest potential actions.
-                    Then, in a [SUMMARY] block, provide a concise and actionable summary for the user based on your analysis. The summary should be clear and easy to read.
+                    First, in a [THINKING] block, analyze the notifications. Identify the most important ones, any patterns or trends, and suggest potential actions. End the thinking block with [/THINKING].
+                    Then, in a [SUMMARY] block, provide a concise and actionable summary for the user based on your analysis. The summary should be clear and easy to read. End the summary block with [/SUMMARY].
 
                     Here are the notifications:
 
@@ -73,7 +73,7 @@ class NotificationViewModel : ViewModel() {
 
                 if (result?.success == true) {
                     val fullResponse = result.response ?: "No summary generated"
-                    val summary = fullResponse.substringAfter("[SUMMARY]", fullResponse).trim()
+                    val summary = fullResponse.substringAfter("[SUMMARY]", fullResponse).substringBefore("[/SUMMARY]").trim()
                     _uiState.value = UiState.Success(summary)
                 } else {
                     _uiState.value = UiState.Error("Failed to generate summary")
