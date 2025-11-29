@@ -117,8 +117,8 @@ object FocusModeRepository {
         if (!_settings.value.isEnabled) return false
         // Never block the app itself
         if (packageName == appPackageName) return false
-        // Always allow the launcher
-        if (packageName == "com.google.android.apps.nexuslauncher") return false
+        // Always allow launchers
+        if (packageName.contains("launcher", ignoreCase = true)) return false
         if (isAppTemporarilyUnlocked(packageName)) return false
         // Block all apps EXCEPT whitelisted ones
         val whitelistedApps = prefs.getStringSet("whitelisted_apps", null) ?: EssentialApps.DEFAULT_WHITELIST
