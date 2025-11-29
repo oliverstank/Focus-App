@@ -6,12 +6,12 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-object DumbModeRepository {
+object FocusModeRepository {
     private lateinit var prefs: SharedPreferences
     private var appPackageName: String = ""
 
-    private val _settings = MutableStateFlow(DumbModeSettings())
-    val settings: StateFlow<DumbModeSettings> = _settings.asStateFlow()
+    private val _settings = MutableStateFlow(FocusModeSettings())
+    val settings: StateFlow<FocusModeSettings> = _settings.asStateFlow()
 
     private val _temporaryUnlocks = MutableStateFlow<List<TemporaryUnlock>>(emptyList())
     val temporaryUnlocks: StateFlow<List<TemporaryUnlock>> = _temporaryUnlocks.asStateFlow()
@@ -20,7 +20,7 @@ object DumbModeRepository {
     val queuedNotifications: StateFlow<List<QueuedNotification>> = _queuedNotifications.asStateFlow()
 
     fun initialize(context: Context) {
-        prefs = context.getSharedPreferences("dumb_mode_prefs", Context.MODE_PRIVATE)
+        prefs = context.getSharedPreferences("focus_mode_prefs", Context.MODE_PRIVATE)
         appPackageName = context.packageName
         loadSettings()
     }
@@ -29,13 +29,13 @@ object DumbModeRepository {
         val isEnabled = prefs.getBoolean("is_enabled", false)
         val whitelistedApps = prefs.getStringSet("whitelisted_apps", null) ?: EssentialApps.DEFAULT_WHITELIST
         val priorityContacts = prefs.getStringSet("priority_contacts", emptySet()) ?: emptySet()
-        val priorityKeywords = prefs.getStringSet("priority_keywords", null) ?: DumbModeSettings().priorityKeywords
+        val priorityKeywords = prefs.getStringSet("priority_keywords", null) ?: FocusModeSettings().priorityKeywords
         val summaryHour = prefs.getInt("summary_hour", 20)
         val summaryMinute = prefs.getInt("summary_minute", 0)
         val alwaysPriorityApps = prefs.getStringSet("always_priority_apps", emptySet()) ?: emptySet()
         val neverPriorityApps = prefs.getStringSet("never_priority_apps", emptySet()) ?: emptySet()
 
-        _settings.value = DumbModeSettings(
+        _settings.value = FocusModeSettings(
             isEnabled = isEnabled,
             whitelistedApps = whitelistedApps,
             priorityContacts = priorityContacts,
@@ -46,7 +46,7 @@ object DumbModeRepository {
         )
     }
 
-    fun updateSettings(settings: DumbModeSettings) {
+    fun updateSettings(settings: FocusModeSettings) {
         prefs.edit().apply {
             putBoolean("is_enabled", settings.isEnabled)
             putStringSet("whitelisted_apps", settings.whitelistedApps)
@@ -61,7 +61,7 @@ object DumbModeRepository {
         _settings.value = settings
     }
 
-    fun setDumbModeEnabled(enabled: Boolean) {
+    fun setFocusModeEnabled(enabled: Boolean) {
         val newSettings = _settings.value.copy(isEnabled = enabled)
         updateSettings(newSettings)
     }
@@ -102,9 +102,12 @@ object DumbModeRepository {
         if (!_settings.value.isEnabled) return false
         // Never block the app itself
         if (packageName == appPackageName) return false
+        // Always allow the launcher
+        if (packageName == "com.google.android.apps.nexuslauncher") return false
         if (isAppTemporarilyUnlocked(packageName)) return false
         // Block all apps EXCEPT whitelisted ones
-        return packageName !in _settings.value.whitelistedApps
+        val whitelistedApps = prefs.getStringSet("whitelisted_apps", null) ?: EssentialApps.DEFAULT_WHITELIST
+        return packageName !in whitelistedApps
     }
 
     fun addQueuedNotification(notification: NotificationData, priority: NotificationPriority) {

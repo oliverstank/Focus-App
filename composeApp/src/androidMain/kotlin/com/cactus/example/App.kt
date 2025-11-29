@@ -57,7 +57,7 @@ fun App() {
                         onClick = { selectedTab = 1 },
                         icon = {
                             Text(
-                                "DUMB MODE",
+                                "FOCUS MODE",
                                 style = MaterialTheme.typography.labelMedium,
                                 fontWeight = if (selectedTab == 1) FontWeight.Bold else FontWeight.Normal
                             )
@@ -68,7 +68,7 @@ fun App() {
         ) { paddingValues ->
             when (selectedTab) {
                 0 -> NotificationSummaryScreen(Modifier.padding(paddingValues))
-                1 -> DumbModeScreen()
+                1 -> FocusModeScreen()
             }
         }
     }

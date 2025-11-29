@@ -1,6 +1,6 @@
 package com.cactus.example
 
-data class DumbModeSettings(
+data class FocusModeSettings(
     val isEnabled: Boolean = false,
     val whitelistedApps: Set<String> = EssentialApps.DEFAULT_WHITELIST, // Apps that are allowed
     val priorityContacts: Set<String> = emptySet(), // Phone numbers or contact IDs
@@ -20,6 +20,7 @@ object EssentialApps {
         "com.android.settings",
         "com.google.android.settings",
         "com.android.systemui",
+        "com.google.android.apps.nexuslauncher",
 
         // Phone & Emergency
         "com.android.dialer",

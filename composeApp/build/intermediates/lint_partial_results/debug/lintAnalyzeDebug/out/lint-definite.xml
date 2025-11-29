@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.7.3" type="incidents">
+
+    <incident
+        id="OldTargetApi"
+        severity="warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details.">
+        <fix-replace
+            description="Update targetSdkVersion to 36"
+            oldString="35"
+            replacement="36"
+            priority="0"/>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="26"
+            column="9"
+            startOffset="556"
+            endLine="26"
+            endColumn="23"
+            endOffset="570"/>
+    </incident>
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.application than 8.7.3 is available: 8.13.1">
+        <fix-replace
+            description="Change to 8.13.1"
+            family="Update versions"
+            oldString="8.7.3"
+            replacement="8.13.1"
+            priority="0"/>
+        <location
+            file="$HOME/Desktop/hackathonforcactus/gradle/libs.versions.toml"
+            line="2"
+            column="7"
+            startOffset="17"
+            endLine="2"
+            endColumn="14"
+            endOffset="24"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose:compose-bom than 2024.02.00 is available: 2025.11.01">
+        <fix-replace
+            description="Change to 2025.11.01"
+            family="Update versions"
+            oldString="2024.02.00"
+            replacement="2025.11.01"
+            priority="0"/>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="73"
+            column="20"
+            startOffset="1718"
+            endLine="73"
+            endColumn="71"
+            endOffset="1769"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.12.0">
+        <fix-replace
+            description="Change to 1.12.0"
+            family="Update versions"
+            oldString="1.8.2"
+            replacement="1.12.0"
+            priority="0"/>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="79"
+            column="20"
+            startOffset="2081"
+            endLine="79"
+            endColumn="62"
+            endOffset="2123"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.10.0">
+        <fix-replace
+            description="Change to 2.10.0"
+            family="Update versions"
+            oldString="2.7.0"
+            replacement="2.10.0"
+            priority="0"/>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="80"
+            column="20"
+            startOffset="2144"
+            endLine="80"
+            endColumn="68"
+            endOffset="2192"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.7.0 is available: 2.10.0">
+        <fix-replace
+            description="Change to 2.10.0"
+            family="Update versions"
+            oldString="2.7.0"
+            replacement="2.10.0"
+            priority="0"/>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="81"
+            column="20"
+            startOffset="2213"
+            endLine="81"
+            endColumn="74"
+            endOffset="2267"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1">
+        <fix-replace
+            description="Change to 1.7.1"
+            family="Update versions"
+            oldString="1.6.1"
+            replacement="1.7.1"
+            priority="0"/>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="83"
+            column="20"
+            startOffset="2346"
+            endLine="83"
+            endColumn="56"
+            endOffset="2382"/>
+    </incident>
+
+    <incident
+        id="ObjectAnimatorBinding"
+        severity="error"
+        message="Could not find property setter method `setLogoAlpha` on `com.cactus.example.NothingAnimationView`">
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/SplashActivity.kt"
+            line="175"
+            column="55"
+            startOffset="5238"
+            endLine="175"
+            endColumn="66"
+            endOffset="5249"/>
+    </incident>
+
+    <incident
+        id="ChromeOsAbiSupport"
+        severity="warning"
+        message="Missing x86_64 ABI support for ChromeOS">
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="31"
+            column="27"
+            startOffset="664"
+            endLine="31"
+            endColumn="61"
+            endOffset="698"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="This folder configuration (`v24`) is unnecessary; `minSdkVersion` is 24. Merge all the resources in this folder into `drawable`.">
+        <fix-data file="${:composeApp*debug*MAIN*sourceProvider*0*resDir*1}/drawable-v24" folderName="drawable" requiresApi="24"/>
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*resDir*1}/drawable-v24"/>
+    </incident>
+
+    <incident
+        id="AutoboxingStateCreation"
+        severity="informational"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`">
+        <fix-replace
+            description="Replace with mutableIntStateOf"
+            replacement="androidx.compose.runtime.mutableIntStateOf"
+            shortenNames="true"
+            priority="0">
+            <range
+                file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/App.kt"
+                startOffset="1303"
+                endOffset="1317"/>
+        </fix-replace>
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/App.kt"
+            line="34"
+            column="35"
+            startOffset="1303"
+            endLine="34"
+            endColumn="49"
+            endOffset="1317"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive icon is missing a monochrome tag">
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*resDir*1}/mipmap-anydpi-v26/ic_launcher.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="272"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive roundIcon is missing a monochrome tag">
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*resDir*1}/mipmap-anydpi-v26/ic_launcher_round.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="272"/>
+    </incident>
+
+</incidents>

@@ -24,7 +24,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 @Composable
-fun DumbModeScreen(viewModel: DumbModeViewModel = viewModel()) {
+fun FocusModeScreen(viewModel: FocusModeViewModel = viewModel()) {
     val context = LocalContext.current
     val settings by viewModel.settings.collectAsState()
     val installedApps by viewModel.installedApps.collectAsState()
@@ -74,7 +74,7 @@ fun DumbModeScreen(viewModel: DumbModeViewModel = viewModel()) {
         ) {
             // Header
             Text(
-                text = "DUMB MODE",
+                text = "FOCUS MODE",
                 style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Black,
                 letterSpacing = 1.5.sp,
@@ -121,7 +121,7 @@ fun DumbModeScreen(viewModel: DumbModeViewModel = viewModel()) {
                     Switch(
                         checked = settings.isEnabled,
                         onCheckedChange = {
-                            viewModel.toggleDumbMode(context) { type ->
+                            viewModel.toggleFocusMode(context) { type ->
                                 permissionType = type
                             }
                         },
@@ -284,6 +284,8 @@ fun AppSelectorDialog(
     onAppToggle: (String) -> Unit,
     onDismiss: () -> Unit
 ) {
+    var searchQuery by remember { mutableStateOf("") }
+
     AlertDialog(
         onDismissRequest = onDismiss,
         title = {
@@ -294,42 +296,56 @@ fun AppSelectorDialog(
             )
         },
         text = {
-            LazyColumn(
-                modifier = Modifier.fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                items(apps) { app ->
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable { onAppToggle(app.packageName) }
-                            .clip(RoundedCornerShape(8.dp))
-                            .background(
-                                if (app.isWhitelisted)
-                                    MaterialTheme.colorScheme.primaryContainer
-                                else
-                                    MaterialTheme.colorScheme.surface
-                            )
-                            .padding(12.dp),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Column(modifier = Modifier.weight(1f)) {
-                            Text(
-                                text = app.appName,
-                                style = MaterialTheme.typography.titleSmall,
-                                fontWeight = FontWeight.Medium
-                            )
-                            Text(
-                                text = app.packageName,
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
+            Column {
+                OutlinedTextField(
+                    value = searchQuery,
+                    onValueChange = { searchQuery = it },
+                    label = { Text("Search for apps") },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 8.dp)
+                )
+                LazyColumn(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    val filteredApps = apps.filter {
+                        it.appName.contains(searchQuery, ignoreCase = true) ||
+                        it.packageName.contains(searchQuery, ignoreCase = true)
+                    }
+                    items(filteredApps) { app ->
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable { onAppToggle(app.packageName) }
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(
+                                    if (app.isWhitelisted)
+                                        MaterialTheme.colorScheme.primaryContainer
+                                    else
+                                        MaterialTheme.colorScheme.surface
+                                )
+                                .padding(12.dp),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Column(modifier = Modifier.weight(1f)) {
+                                Text(
+                                    text = app.appName,
+                                    style = MaterialTheme.typography.titleSmall,
+                                    fontWeight = FontWeight.Medium
+                                )
+                                Text(
+                                    text = app.packageName,
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                            Checkbox(
+                                checked = app.isWhitelisted,
+                                onCheckedChange = { onAppToggle(app.packageName) }
                             )
                         }
-                        Checkbox(
-                            checked = app.isWhitelisted,
-                            onCheckedChange = { onAppToggle(app.packageName) }
-                        )
                     }
                 }
             }
@@ -351,13 +367,13 @@ fun PermissionRequestDialog(
     val (title, message) = when (permissionType) {
         "overlay" -> Pair(
             "DISPLAY OVER OTHER APPS",
-            "Dumb Mode needs permission to display over other apps to block social media.\n\nThis allows the app to show a lock screen when you try to open blocked apps."
+            "Focus Mode needs permission to display over other apps to block social media.\n\nThis allows the app to show a lock screen when you try to open blocked apps."
         )
         "usage_stats" -> Pair(
             "USAGE ACCESS",
-            "Dumb Mode needs usage access permission to detect which app is in the foreground.\n\nThis allows the app to block social media apps when they're opened."
+            "Focus Mode needs usage access permission to detect which app is in the foreground.\n\nThis allows the app to block social media apps when they're opened."
         )
-        else -> Pair("PERMISSION NEEDED", "Permission is required for Dumb Mode to work.")
+        else -> Pair("PERMISSION NEEDED", "Permission is required for Focus Mode to work.")
     }
 
     AlertDialog(

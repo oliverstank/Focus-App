@@ -35,7 +35,7 @@ class AppBlockerService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        DumbModeRepository.initialize(this)
+        FocusModeRepository.initialize(this)
         windowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
 
         // Start as foreground service
@@ -46,7 +46,7 @@ class AppBlockerService : Service() {
 
         // Observe settings changes
         serviceScope.launch {
-            DumbModeRepository.settings.collect { settings ->
+            FocusModeRepository.settings.collect { settings ->
                 if (!settings.isEnabled) {
                     stopSelf()
                 }
@@ -57,7 +57,7 @@ class AppBlockerService : Service() {
     private fun createNotification(): Notification {
         val channel = NotificationChannel(
             CHANNEL_ID,
-            "Dumb Mode Active",
+            "Focus Mode Active",
             NotificationManager.IMPORTANCE_LOW
         ).apply {
             description = "Monitoring and blocking apps"
@@ -67,7 +67,7 @@ class AppBlockerService : Service() {
         notificationManager.createNotificationChannel(channel)
 
         return NotificationCompat.Builder(this, CHANNEL_ID)
-            .setContentTitle("Dumb Mode Active")
+            .setContentTitle("Focus Mode Active")
             .setContentText("Non-essential apps are blocked")
             .setSmallIcon(android.R.drawable.ic_lock_lock)
             .setPriority(NotificationCompat.PRIORITY_LOW)
@@ -89,7 +89,7 @@ class AppBlockerService : Service() {
         val foregroundPackage = getForegroundApp() ?: return
 
         // Check if app should be blocked
-        if (DumbModeRepository.isAppBlocked(foregroundPackage)) {
+        if (FocusModeRepository.isAppBlocked(foregroundPackage)) {
             if (currentBlockedApp != foregroundPackage) {
                 currentBlockedApp = foregroundPackage
                 showBlockingOverlay(foregroundPackage)
@@ -124,7 +124,7 @@ class AppBlockerService : Service() {
 
         try {
             val appName = packageName.split(".").lastOrNull() ?: packageName
-            val unlockInfo = DumbModeRepository.temporaryUnlocks.value
+            val unlockInfo = FocusModeRepository.temporaryUnlocks.value
                 .firstOrNull { it.packageName == packageName && it.isStillUnlocked() }
 
             blockingView = createBlockingView(appName, unlockInfo)
@@ -175,7 +175,7 @@ class AppBlockerService : Service() {
             })
 
             addView(android.widget.TextView(this@AppBlockerService).apply {
-                text = "\"$appName\" is not allowed in Dumb Mode"
+                text = "\"$appName\" is not allowed in Focus Mode"
                 textSize = 18f
                 setTextColor(android.graphics.Color.parseColor("#AAAAAA"))
                 gravity = Gravity.CENTER
@@ -229,6 +229,9 @@ class AppBlockerService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        if (intent?.action == "com.cactus.example.ACTION_CHECK_FOREGROUND_APP") {
+            checkForegroundApp()
+        }
         return START_STICKY
     }
 

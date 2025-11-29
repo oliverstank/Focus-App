@@ -13,10 +13,10 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class DumbModeViewModel : ViewModel() {
+class FocusModeViewModel : ViewModel() {
 
-    private val _settings = MutableStateFlow(DumbModeSettings())
-    val settings: StateFlow<DumbModeSettings> = _settings.asStateFlow()
+    private val _settings = MutableStateFlow(FocusModeSettings())
+    val settings: StateFlow<FocusModeSettings> = _settings.asStateFlow()
 
     private val _installedApps = MutableStateFlow<List<WhitelistedAppInfo>>(emptyList())
     val installedApps: StateFlow<List<WhitelistedAppInfo>> = _installedApps.asStateFlow()
@@ -26,12 +26,12 @@ class DumbModeViewModel : ViewModel() {
 
     init {
         viewModelScope.launch {
-            DumbModeRepository.settings.collect { settings ->
+            FocusModeRepository.settings.collect { settings ->
                 _settings.value = settings
             }
         }
         viewModelScope.launch {
-            DumbModeRepository.queuedNotifications.collect { notifications ->
+            FocusModeRepository.queuedNotifications.collect { notifications ->
                 _queuedNotifications.value = notifications
             }
         }
@@ -44,8 +44,6 @@ class DumbModeViewModel : ViewModel() {
             // Get all apps that can be launched
             val apps = packageManager.getInstalledApplications(android.content.pm.PackageManager.GET_META_DATA)
                 .filter { appInfo ->
-                    // Keep apps that have a launcher intent
-                    packageManager.getLaunchIntentForPackage(appInfo.packageName) != null &&
                     appInfo.packageName != context.packageName
                 }
                 .map { appInfo ->
@@ -61,7 +59,7 @@ class DumbModeViewModel : ViewModel() {
         }
     }
 
-    fun toggleDumbMode(context: Context, onPermissionNeeded: (String) -> Unit) {
+    fun toggleFocusMode(context: Context, onPermissionNeeded: (String) -> Unit) {
         val newEnabled = !_settings.value.isEnabled
 
         if (newEnabled) {
@@ -77,13 +75,13 @@ class DumbModeViewModel : ViewModel() {
                 return
             }
 
-            DumbModeRepository.setDumbModeEnabled(true)
+            FocusModeRepository.setFocusModeEnabled(true)
 
             // Start the app blocker service
             val intent = Intent(context, AppBlockerService::class.java)
             context.startForegroundService(intent)
         } else {
-            DumbModeRepository.setDumbModeEnabled(false)
+            FocusModeRepository.setFocusModeEnabled(false)
 
             // Stop the app blocker service
             val intent = Intent(context, AppBlockerService::class.java)
@@ -108,9 +106,9 @@ class DumbModeViewModel : ViewModel() {
 
     fun toggleAppWhitelisted(packageName: String) {
         if (packageName in _settings.value.whitelistedApps) {
-            DumbModeRepository.removeWhitelistedApp(packageName)
+            FocusModeRepository.removeWhitelistedApp(packageName)
         } else {
-            DumbModeRepository.addWhitelistedApp(packageName)
+            FocusModeRepository.addWhitelistedApp(packageName)
         }
 
         // Update the local list
@@ -127,28 +125,28 @@ class DumbModeViewModel : ViewModel() {
         val newSettings = _settings.value.copy(
             summaryTime = SummaryTime(hour, minute)
         )
-        DumbModeRepository.updateSettings(newSettings)
+        FocusModeRepository.updateSettings(newSettings)
     }
 
     fun addPriorityKeyword(keyword: String) {
         val newSettings = _settings.value.copy(
             priorityKeywords = _settings.value.priorityKeywords + keyword
         )
-        DumbModeRepository.updateSettings(newSettings)
+        FocusModeRepository.updateSettings(newSettings)
     }
 
     fun removePriorityKeyword(keyword: String) {
         val newSettings = _settings.value.copy(
             priorityKeywords = _settings.value.priorityKeywords - keyword
         )
-        DumbModeRepository.updateSettings(newSettings)
+        FocusModeRepository.updateSettings(newSettings)
     }
 
     fun getTodayQueuedNotifications(): List<QueuedNotification> {
-        return DumbModeRepository.getTodayQueuedNotifications()
+        return FocusModeRepository.getTodayQueuedNotifications()
     }
 
     fun clearQueuedNotifications() {
-        DumbModeRepository.clearQueuedNotifications()
+        FocusModeRepository.clearQueuedNotifications()
     }
 }

@@ -7,7 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class NotificationPriorityAnalyzer(
-    private val settings: DumbModeSettings,
+    private val settings: FocusModeSettings,
     private val cactusLM: CactusLM? = null
 ) {
 

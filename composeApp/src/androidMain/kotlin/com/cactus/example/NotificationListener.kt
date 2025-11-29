@@ -26,7 +26,7 @@ class NotificationListener : NotificationListenerService() {
 
     override fun onCreate() {
         super.onCreate()
-        DumbModeRepository.initialize(this)
+        FocusModeRepository.initialize(this)
 
         // Initialize LLM for priority analysis
         serviceScope.launch(Dispatchers.IO) {
@@ -67,22 +67,22 @@ class NotificationListener : NotificationListenerService() {
 
         NotificationRepository.addNotification(notificationData)
 
-        // Handle dumb mode filtering
-        val settings = DumbModeRepository.settings.value
+        // Handle focus mode filtering
+        val settings = FocusModeRepository.settings.value
         // If app is NOT whitelisted (i.e., blocked), handle the notification
         if (settings.isEnabled && packageName !in settings.whitelistedApps) {
             serviceScope.launch {
-                handleDumbModeNotification(sbn, notificationData, settings)
+                handleFocusModeNotification(sbn, notificationData, settings)
             }
         }
 
         Log.d("NotificationListener", "Notification from $packageName: $title - $text")
     }
 
-    private suspend fun handleDumbModeNotification(
+    private suspend fun handleFocusModeNotification(
         sbn: StatusBarNotification,
         notificationData: NotificationData,
-        settings: DumbModeSettings
+        settings: FocusModeSettings
     ) {
         // Initialize analyzer if needed
         if (priorityAnalyzer == null) {
@@ -99,7 +99,7 @@ class NotificationListener : NotificationListenerService() {
             NotificationPriority.LOW -> {
                 // Cancel the original notification and queue it
                 cancelNotification(sbn.key)
-                DumbModeRepository.addQueuedNotification(notificationData, priority)
+                FocusModeRepository.addQueuedNotification(notificationData, priority)
                 Log.d("NotificationListener", "Queued low-priority notification from ${notificationData.packageName}")
             }
         }
@@ -114,7 +114,7 @@ class NotificationListener : NotificationListenerService() {
             "Priority Notifications",
             NotificationManager.IMPORTANCE_HIGH
         ).apply {
-            description = "High priority notifications in dumb mode"
+            description = "High priority notifications in focus mode"
         }
         notificationManager.createNotificationChannel(channel)
 

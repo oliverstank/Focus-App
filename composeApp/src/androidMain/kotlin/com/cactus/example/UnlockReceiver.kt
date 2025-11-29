@@ -10,7 +10,7 @@ class UnlockReceiver : BroadcastReceiver() {
         val packageName = intent.getStringExtra("package_name") ?: return
 
         // Add temporary unlock
-        DumbModeRepository.addTemporaryUnlock(packageName)
+        FocusModeRepository.addTemporaryUnlock(packageName)
 
         // Show confirmation
         val appName = packageName.split(".").lastOrNull() ?: packageName

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.7.3" type="incidents">
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.application than 8.7.3 is available: 8.13.1">
+        <fix-replace
+            description="Change to 8.13.1"
+            family="Update versions"
+            oldString="8.7.3"
+            replacement="8.13.1"
+            priority="0"/>
+        <location
+            file="$HOME/Desktop/hackathonforcactus/gradle/libs.versions.toml"
+            line="2"
+            column="7"
+            startOffset="17"
+            endLine="2"
+            endColumn="14"
+            endOffset="24"/>
+    </incident>
+
+</incidents>

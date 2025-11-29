@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         CactusContextInitializer.initialize(this)
-        DumbModeRepository.initialize(this)
+        FocusModeRepository.initialize(this)
 
         setContent {
             val isNotificationListenerEnabled = isNotificationServiceEnabled()

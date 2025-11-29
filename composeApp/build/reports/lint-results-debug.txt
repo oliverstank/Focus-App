@@ -1,0 +1,208 @@
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/AppBlockerService.kt:58: Error: Call requires API level 26 (current min is 24): android.app.NotificationChannel() [NewApi]
+        val channel = NotificationChannel(
+                      ~~~~~~~~~~~~~~~~~~~
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/BootReceiver.kt:19: Error: Call requires API level 26 (current min is 24): android.content.Context#startForegroundService [NewApi]
+                context.startForegroundService(serviceIntent)
+                        ~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/DumbModeViewModel.kt:82: Error: Call requires API level 26 (current min is 24): android.content.Context#startForegroundService [NewApi]
+            context.startForegroundService(intent)
+                    ~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/DumbModeViewModel.kt:99: Error: Call requires API level 29 (current min is 24): android.app.AppOpsManager#unsafeCheckOpNoThrow [NewApi]
+        val mode = appOpsManager.unsafeCheckOpNoThrow(
+                                 ~~~~~~~~~~~~~~~~~~~~
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/NotificationListener.kt:112: Error: Call requires API level 26 (current min is 24): android.app.NotificationChannel() [NewApi]
+        val channel = NotificationChannel(
+                      ~~~~~~~~~~~~~~~~~~~
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/NotificationListener.kt:119: Error: Call requires API level 26 (current min is 24): android.app.NotificationManager#createNotificationChannel [NewApi]
+        notificationManager.createNotificationChannel(channel)
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "NewApi":
+   This check scans through all the Android API calls in the application and
+   warns about any calls that are not available on all versions targeted by
+   this application (according to its minimum SDK attribute in the manifest).
+
+   If you really want to use this API and don't need to support older devices
+   just set the minSdkVersion in your build.gradle or AndroidManifest.xml
+   files.
+
+   If your code is deliberately accessing newer APIs, and you have ensured
+   (e.g. with conditional execution) that this code will only ever be called
+   on a supported platform, then you can annotate your class or method with
+   the @TargetApi annotation specifying the local minimum SDK to apply, such
+   as @TargetApi(11), such that this check considers 11 rather than your
+   manifest file's minimum SDK as the required API level.
+
+   If you are deliberately setting android: attributes in style definitions,
+   make sure you place this in a values-vNN folder in order to avoid running
+   into runtime conflicts on certain devices where manufacturers have added
+   custom attributes whose ids conflict with the new ones on later platforms.
+
+   Similarly, you can use tools:targetApi="11" in an XML file to indicate that
+   the element will only be inflated in an adequate context.
+
+/Users/mac/Desktop/hackathonforcactus/composeApp/build.gradle.kts:26: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdk = 35
+        ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application runs on a version of Android that is more recent than
+   your targetSdkVersion specifies that it has been tested with, various
+   compatibility modes kick in. This ensures that your application continues
+   to work, but it may look out of place. For example, if the targetSdkVersion
+   is less than 14, your app may get an option button in the UI.
+
+   To fix this issue, set the targetSdkVersion to the highest available value.
+   Then test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/SplashActivity.kt:26: Warning: The application should not provide its own launch screen [CustomSplashScreen]
+class SplashActivity : AppCompatActivity() {
+      ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "CustomSplashScreen":
+   Starting in Android 12 (API 31+), the application's Launch Screen is
+   provided by the system and the application should not create its own,
+   otherwise the user will see two splashscreens. Please check the
+   SplashScreen class to check how the Splash Screen can be controlled and
+   customized.
+
+   https://developer.android.com/guide/topics/ui/splash-screen
+
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/DumbModeViewModel.kt:45: Warning: As of Android 11, this method no longer returns information about all apps; see https://g.co/dev/packagevisibility for details [QueryPermissionsNeeded]
+            val apps = packageManager.getInstalledApplications(android.content.pm.PackageManager.GET_META_DATA)
+                                      ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "QueryPermissionsNeeded":
+   Apps that target Android 11 cannot query or interact with other installed
+   apps by default. If you need to query or interact with other installed
+   apps, you may need to add a <queries> declaration in your manifest.
+
+   As a corollary, the methods PackageManager#getInstalledPackages and
+   PackageManager#getInstalledApplications will no longer return information
+   about all installed apps. To query specific apps or types of apps, you can
+   use methods like PackageManager#getPackageInfo or
+   PackageManager#queryIntentActivities.
+
+   https://g.co/dev/packagevisibility
+
+/Users/mac/Desktop/hackathonforcactus/gradle/libs.versions.toml:2: Warning: A newer version of com.android.application than 8.7.3 is available: 8.13.1 [AndroidGradlePluginVersion]
+agp = "8.7.3"
+      ~~~~~~~
+/Users/mac/Desktop/hackathonforcactus/gradle/libs.versions.toml:2: Warning: A newer version of com.android.application than 8.7.3 is available: 8.13.1 [AndroidGradlePluginVersion]
+agp = "8.7.3"
+      ~~~~~~~
+/Users/mac/Desktop/hackathonforcactus/gradle/libs.versions.toml:2: Warning: A newer version of com.android.application than 8.7.3 is available: 8.13.1 [AndroidGradlePluginVersion]
+agp = "8.7.3"
+      ~~~~~~~
+
+   Explanation for issues of type "AndroidGradlePluginVersion":
+   This detector looks for usage of the Android Gradle Plugin where the
+   version you are using is not the current stable release. Using older
+   versions is fine, and there are cases where you deliberately want to stick
+   with an older version. However, you may simply not be aware that a more
+   recent version is available, and that is what this lint check helps find.
+
+/Users/mac/Desktop/hackathonforcactus/composeApp/build.gradle.kts:73: Warning: A newer version of androidx.compose:compose-bom than 2024.02.00 is available: 2025.11.01 [GradleDependency]
+    implementation(platform("androidx.compose:compose-bom:2024.02.00"))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/Desktop/hackathonforcactus/composeApp/build.gradle.kts:79: Warning: A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.12.0 [GradleDependency]
+    implementation("androidx.activity:activity-compose:1.8.2")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/Desktop/hackathonforcactus/composeApp/build.gradle.kts:80: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.10.0 [GradleDependency]
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/Desktop/hackathonforcactus/composeApp/build.gradle.kts:81: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.7.0 is available: 2.10.0 [GradleDependency]
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/mac/Desktop/hackathonforcactus/composeApp/build.gradle.kts:83: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
+    implementation("androidx.appcompat:appcompat:1.6.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/SplashActivity.kt:175: Error: Could not find property setter method setLogoAlpha on com.cactus.example.NothingAnimationView [ObjectAnimatorBinding]
+        val fadeInLogo = ObjectAnimator.ofFloat(this, "logoAlpha", 0f, 1f).apply {
+                                                      ~~~~~~~~~~~
+
+   Explanation for issues of type "ObjectAnimatorBinding":
+   This check cross references properties referenced by String from
+   ObjectAnimator and PropertyValuesHolder method calls and ensures that the
+   corresponding setter methods exist and have the right signatures.
+
+/Users/mac/Desktop/hackathonforcactus/composeApp/build.gradle.kts:31: Warning: Missing x86_64 ABI support for ChromeOS [ChromeOsAbiSupport]
+            abiFilters += listOf("arm64-v8a", "armeabi-v7a")
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ChromeOsAbiSupport":
+   To properly support ChromeOS, your Android application should have an x86
+   and/or x86_64 binary as part of the build configuration. To fix the issue,
+   ensure your files are properly optimized for ARM; the binary translator
+   will then ensure compatibility with x86. Alternatively, add an abiSplit for
+   x86 within your build.gradle file and create the required x86
+   dependencies.
+
+   https://developer.android.com/ndk/guides/abis
+
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/drawable-v24: Warning: This folder configuration (v24) is unnecessary; minSdkVersion is 24. Merge all the resources in this folder into drawable. [ObsoleteSdkInt]
+
+   Explanation for issues of type "ObsoleteSdkInt":
+   This check flags version checks that are not necessary, because the
+   minSdkVersion (or surrounding known API level) is already at least as high
+   as the version checked for.
+
+   Similarly, it also looks for resources in -vNN folders, such as values-v14
+   where the version qualifier is less than or equal to the minSdkVersion,
+   where the contents should be merged into the best folder.
+
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/kotlin/com/cactus/example/App.kt:34: Information: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+    var selectedTab by remember { mutableStateOf(0) }
+                                  ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "AutoboxingStateCreation":
+   Calling mutableStateOf<T>() when T is either backed by a primitive type on
+   the JVM or is a value class results in a state implementation that requires
+   all state values to be boxed. This usually causes an additional allocation
+   for each state write, and adds some additional work to auto-unbox values
+   when reading the value of the state. Instead, prefer to use a specialized
+   primitive state implementation for Int, Long, Float, and Double when the
+   state does not need to track null values and does not override the default
+   SnapshotMutationPolicy. See mutableIntStateOf(), mutableLongStateOf(),
+   mutableFloatStateOf(), and mutableDoubleStateOf() for more information.
+
+   Vendor: Jetpack Compose
+   Identifier: androidx.compose.runtime
+   Feedback: https://issuetracker.google.com/issues/new?component=612128
+
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-anydpi-v26/ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/res/mipmap-anydpi-v26/ic_launcher_round.xml:2: Warning: The application adaptive roundIcon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "MonochromeLauncherIcon":
+   If android:roundIcon and android:icon are both in your manifest, you must
+   either remove the reference to android:roundIcon if it is not needed; or,
+   supply the monochrome icon in the drawable defined by the android:roundIcon
+   and android:icon attribute.
+
+   For example, if android:roundIcon and android:icon are both in the
+   manifest, a launcher might choose to use android:roundIcon over
+   android:icon to display the adaptive app icon. Therefore, your themed
+   application iconwill not show if your monochrome attribute is not also
+   specified in android:roundIcon.
+
+7 errors, 15 warnings

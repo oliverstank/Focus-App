@@ -9,195 +9,248 @@
 9        android:targetSdkVersion="35" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:5:5-67
-11-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:5:22-64
+11-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:5:5-67
+11-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-12-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:6:5-77
-12-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:6:22-74
+12-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:6:5-77
+12-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:6:22-74
 13    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-13-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:7:5-78
-13-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:7:22-75
+13-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:7:5-78
+13-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:7:22-75
 14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-14-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:8:5-77
-14-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:8:22-74
+14-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:8:5-77
+14-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:8:22-74
 15    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
-15-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:9:5-89
-15-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:9:22-86
+15-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:9:5-89
+15-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:9:22-86
 16    <uses-permission
-16-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:10:5-12:47
+16-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:10:5-12:47
 17        android:name="android.permission.PACKAGE_USAGE_STATS"
-17-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:10:22-75
+17-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:10:22-75
 18        android:protectionLevel="signature|privileged|appop|preinstalled|installer|verifier|setup" />
-18-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:11:9-99
-19
-20    <permission
-20-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
-21        android:name="com.cactus.example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-21-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
-22        android:protectionLevel="signature" />
-22-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
-23
-24    <uses-permission android:name="com.cactus.example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-24-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
-24-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
-25
-26    <application
-26-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:14:5-55:19
-27        android:allowBackup="true"
-27-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:15:9-35
-28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-28-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
-29        android:debuggable="true"
-30        android:extractNativeLibs="true"
-30-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:22:9-41
-31        android:icon="@mipmap/ic_launcher"
-31-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:16:9-43
-32        android:label="@string/app_name"
-32-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:17:9-41
-33        android:roundIcon="@mipmap/ic_launcher_round"
-33-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:18:9-54
-34        android:supportsRtl="true"
-34-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:19:9-35
-35        android:theme="@android:style/Theme.Material.Light.NoActionBar"
-35-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:20:9-72
-36        android:usesCleartextTraffic="true" >
-36-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:21:9-44
-37        <activity
-37-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:23:9-32:20
-38            android:name="com.cactus.example.MainActivity"
-38-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:26:13-41
-39            android:exported="true"
-39-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:24:13-36
-40            android:windowSoftInputMode="adjustResize" >
-40-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:25:13-55
-41            <intent-filter>
-41-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:27:13-31:29
-42                <action android:name="android.intent.action.MAIN" />
-42-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:28:17-69
-42-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:28:25-66
-43
-44                <category android:name="android.intent.category.LAUNCHER" />
-44-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:30:17-77
-44-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:30:27-74
-45            </intent-filter>
-46        </activity>
-47
-48        <service
-48-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:34:9-41:19
-49            android:name="com.cactus.example.NotificationListener"
-49-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:35:13-49
-50            android:exported="true"
-50-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:36:13-36
-51            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
-51-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:37:13-87
-52            <intent-filter>
-52-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:38:13-40:29
-53                <action android:name="android.service.notification.NotificationListenerService" />
-53-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:39:17-99
-53-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:39:25-96
-54            </intent-filter>
-55        </service>
-56        <service
-56-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:43:9-50:19
-57            android:name="com.cactus.example.AppBlockerService"
-57-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:44:13-46
-58            android:exported="false"
-58-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:45:13-37
-59            android:foregroundServiceType="specialUse" >
-59-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:46:13-55
-60            <property
-60-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:47:13-49:62
-61                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-61-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:48:17-76
-62                android:value="App blocker for focus mode" />
-62-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:49:17-59
-63        </service>
-64
-65        <receiver
-65-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:52:9-54:40
-66            android:name="com.cactus.example.UnlockReceiver"
-66-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:53:13-43
-67            android:exported="false" />
-67-->/Users/mac/Desktop/cactus-kotlin/example/composeApp/src/androidMain/AndroidManifest.xml:54:13-37
-68
-69        <activity
-69-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/8c4c3c182f1a99e6c7e2e48a0a2a7e07/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
-70            android:name="androidx.compose.ui.tooling.PreviewActivity"
-70-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/8c4c3c182f1a99e6c7e2e48a0a2a7e07/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
-71            android:exported="true" />
-71-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/8c4c3c182f1a99e6c7e2e48a0a2a7e07/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
-72        <activity
-72-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/4c531f3a8f077ecbc5deba8ecc3b31ab/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:23:9-25:39
-73            android:name="androidx.activity.ComponentActivity"
-73-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/4c531f3a8f077ecbc5deba8ecc3b31ab/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:24:13-63
-74            android:exported="true" />
-74-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/4c531f3a8f077ecbc5deba8ecc3b31ab/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:25:13-36
-75
-76        <provider
-76-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-77            android:name="androidx.startup.InitializationProvider"
-77-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
-78            android:authorities="com.cactus.example.androidx-startup"
-78-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
-79            android:exported="false" >
-79-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
-80            <meta-data
-80-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-81                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-81-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
-82                android:value="androidx.startup" />
-82-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
-83            <meta-data
-83-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mac/.gradle/caches/8.9/transforms/8623e89455cc5a51e9f7f8a5c0ae56ae/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
-84                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-84-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mac/.gradle/caches/8.9/transforms/8623e89455cc5a51e9f7f8a5c0ae56ae/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
-85                android:value="androidx.startup" />
-85-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mac/.gradle/caches/8.9/transforms/8623e89455cc5a51e9f7f8a5c0ae56ae/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
-86            <meta-data
-86-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
-87                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-87-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
-88                android:value="androidx.startup" />
-88-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
-89        </provider>
-90
-91        <receiver
-91-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
-92            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-92-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
-93            android:directBootAware="false"
-93-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
-94            android:enabled="true"
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
-95            android:exported="true"
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
-96            android:permission="android.permission.DUMP" >
-96-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
-97            <intent-filter>
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
-98                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
-99            </intent-filter>
-100            <intent-filter>
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
-101                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
-102            </intent-filter>
-103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
-104                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
-105            </intent-filter>
-106            <intent-filter>
-106-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
-107                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
-108            </intent-filter>
-109        </receiver>
-110    </application>
-111
-112</manifest>
+18-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:11:9-99
+19    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+19-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:13:5-81
+19-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:13:22-78
+20
+21    <permission
+21-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+22        android:name="com.cactus.example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+22-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+23        android:protectionLevel="signature" />
+23-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+24
+25    <uses-permission android:name="com.cactus.example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+25-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+25-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+26
+27    <application
+27-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:15:5-82:19
+28        android:name="com.cactus.example.MyApplication"
+28-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:16:9-38
+29        android:allowBackup="true"
+29-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:17:9-35
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+31        android:debuggable="true"
+32        android:extractNativeLibs="true"
+32-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:24:9-41
+33        android:icon="@mipmap/ic_launcher"
+33-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:18:9-43
+34        android:label="@string/app_name"
+34-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:19:9-41
+35        android:roundIcon="@mipmap/ic_launcher_round"
+35-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:20:9-54
+36        android:supportsRtl="true"
+36-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:21:9-35
+37        android:theme="@style/Theme.AppCompat.NoActionBar"
+37-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:22:9-59
+38        android:usesCleartextTraffic="true" >
+38-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:23:9-44
+39        <activity
+39-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:25:9-33:20
+40            android:name="com.cactus.example.SplashActivity"
+40-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:26:13-43
+41            android:exported="true"
+41-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:27:13-36
+42            android:theme="@style/Theme.AppCompat.NoActionBar" >
+42-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:28:13-63
+43            <intent-filter>
+43-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:29:13-32:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:30:17-69
+44-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:30:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:31:17-77
+46-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:31:27-74
+47            </intent-filter>
+48        </activity>
+49        <activity
+49-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:34:9-41:20
+50            android:name="com.cactus.example.MainActivity"
+50-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:37:13-41
+51            android:exported="true"
+51-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:35:13-36
+52            android:windowSoftInputMode="adjustResize" >
+52-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:36:13-55
+53            <intent-filter>
+53-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:38:13-40:29
+54                <action android:name="android.intent.action.MAIN" />
+54-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:30:17-69
+54-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:30:25-66
+55            </intent-filter>
+56        </activity>
+57
+58        <service
+58-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:43:9-50:19
+59            android:name="com.cactus.example.NotificationListener"
+59-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:44:13-49
+60            android:exported="true"
+60-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:45:13-36
+61            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+61-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:46:13-87
+62            <intent-filter>
+62-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:47:13-49:29
+63                <action android:name="android.service.notification.NotificationListenerService" />
+63-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:48:17-99
+63-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:48:25-96
+64            </intent-filter>
+65        </service>
+66        <service
+66-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:52:9-59:19
+67            android:name="com.cactus.example.AppBlockerService"
+67-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:53:13-46
+68            android:exported="false"
+68-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:54:13-37
+69            android:foregroundServiceType="specialUse" >
+69-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:55:13-55
+70            <property
+70-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:56:13-58:62
+71                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+71-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:57:17-76
+72                android:value="App blocker for focus mode" />
+72-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:58:17-59
+73        </service>
+74
+75        <receiver
+75-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:61:9-63:40
+76            android:name="com.cactus.example.UnlockReceiver"
+76-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:62:13-43
+77            android:exported="false" />
+77-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:63:13-37
+78        <receiver
+78-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:65:9-71:20
+79            android:name="com.cactus.example.BootReceiver"
+79-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:66:13-41
+80            android:exported="true" >
+80-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:67:13-36
+81            <intent-filter>
+81-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:68:13-70:29
+82                <action android:name="android.intent.action.BOOT_COMPLETED" />
+82-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:69:17-79
+82-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:69:25-76
+83            </intent-filter>
+84        </receiver>
+85        <receiver
+85-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:73:9-81:20
+86            android:name="com.cactus.example.DeviceStateReceiver"
+86-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:74:13-48
+87            android:exported="true" >
+87-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:75:13-36
+88            <intent-filter>
+88-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:76:13-80:29
+89                <action android:name="android.intent.action.SCREEN_ON" />
+89-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:77:17-74
+89-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:77:25-71
+90                <action android:name="android.intent.action.SCREEN_OFF" />
+90-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:78:17-75
+90-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:78:25-72
+91                <action android:name="android.intent.action.USER_PRESENT" />
+91-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:79:17-77
+91-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:79:25-74
+92            </intent-filter>
+93        </receiver>
+94
+95        <activity
+95-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/8c4c3c182f1a99e6c7e2e48a0a2a7e07/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+96            android:name="androidx.compose.ui.tooling.PreviewActivity"
+96-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/8c4c3c182f1a99e6c7e2e48a0a2a7e07/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+97            android:exported="true" />
+97-->[androidx.compose.ui:ui-tooling-android:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/8c4c3c182f1a99e6c7e2e48a0a2a7e07/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+98
+99        <provider
+99-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+100            android:name="androidx.startup.InitializationProvider"
+100-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+101            android:authorities="com.cactus.example.androidx-startup"
+101-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+102            android:exported="false" >
+102-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+103            <meta-data
+103-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+104                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+104-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+105                android:value="androidx.startup" />
+105-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+106            <meta-data
+106-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mac/.gradle/caches/8.9/transforms/8623e89455cc5a51e9f7f8a5c0ae56ae/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+107                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+107-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mac/.gradle/caches/8.9/transforms/8623e89455cc5a51e9f7f8a5c0ae56ae/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+108                android:value="androidx.startup" />
+108-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/mac/.gradle/caches/8.9/transforms/8623e89455cc5a51e9f7f8a5c0ae56ae/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+109            <meta-data
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+110                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+111                android:value="androidx.startup" />
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+112        </provider>
+113
+114        <activity
+114-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/4c531f3a8f077ecbc5deba8ecc3b31ab/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:23:9-25:39
+115            android:name="androidx.activity.ComponentActivity"
+115-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/4c531f3a8f077ecbc5deba8ecc3b31ab/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:24:13-63
+116            android:exported="true" />
+116-->[androidx.compose.ui:ui-test-manifest:1.6.1] /Users/mac/.gradle/caches/8.9/transforms/4c531f3a8f077ecbc5deba8ecc3b31ab/transformed/ui-test-manifest-1.6.1/AndroidManifest.xml:25:13-36
+117
+118        <receiver
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+119            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+120            android:directBootAware="false"
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+121            android:enabled="true"
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+122            android:exported="true"
+122-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+123            android:permission="android.permission.DUMP" >
+123-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+124            <intent-filter>
+124-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+125                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+125-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+125-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+126            </intent-filter>
+127            <intent-filter>
+127-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+128                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+128-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+128-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+129            </intent-filter>
+130            <intent-filter>
+130-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+131                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+131-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+131-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+132            </intent-filter>
+133            <intent-filter>
+133-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+134                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+134-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+134-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/5f708476404b0520a0dc02b39a45209a/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+135            </intent-filter>
+136        </receiver>
+137    </application>
+138
+139</manifest>

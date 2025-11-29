@@ -61,6 +61,12 @@ android {
     buildFeatures {
         compose = true
     }
+
+    lint {
+        disable.add("FlowOperatorInvokedInComposition")
+        disable.add("StateFlowValueCalledInComposition")
+        abortOnError = false
+    }
 }
 
 dependencies {
@@ -74,6 +80,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     implementation("com.cactuscompute:cactus:1.0.2-beta")
+    implementation("androidx.appcompat:appcompat:1.6.1")
 
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")

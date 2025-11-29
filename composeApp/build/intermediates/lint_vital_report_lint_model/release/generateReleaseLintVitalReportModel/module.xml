@@ -1,0 +1,28 @@
+<lint-module
+    format="1"
+    dir="/Users/mac/Desktop/hackathonforcactus/composeApp"
+    name=":composeApp"
+    type="APP"
+    maven="NotificationSummary:composeApp:unspecified"
+    agpVersion="8.7.3"
+    buildFolder="build"
+    bootClassPath="/Users/mac/Library/Android/sdk/platforms/android-35/android.jar:/Users/mac/Library/Android/sdk/build-tools/34.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="11"
+    compileTarget="android-35"
+    neverShrinking="true">
+  <lintOptions
+      disable="FlowOperatorInvokedInComposition,StateFlowValueCalledInComposition"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true">
+    <severities>
+      <severity
+        id="FlowOperatorInvokedInComposition"
+        severity="IGNORE" />
+      <severity
+        id="StateFlowValueCalledInComposition"
+        severity="IGNORE" />
+    </severities>
+  </lintOptions>
+  <variant name="release"/>
+</lint-module>

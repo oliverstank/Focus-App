@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.7.3" type="conditional_incidents">
+
+    <incident
+        id="NewApi"
+        severity="error"
+        message="">
+        <fix-data minSdk="ffffffffff800000" requiresApi="fffffffffe000000"/>
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/AppBlockerService.kt"
+            line="58"
+            column="23"
+            startOffset="1862"
+            endLine="58"
+            endColumn="42"
+            endOffset="1881"/>
+        <map>
+            <entry
+                name="desc"
+                string="(Ljava.lang.String;Ljava.lang.CharSequence;I)"/>
+            <entry
+                name="message"
+                string="Call requires API level 26 (current min is %1$s): `android.app.NotificationChannel()`"/>
+            <api-levels id="minSdk"
+                value="ffffffffff800000"/>
+            <entry
+                name="name"
+                string="&lt;init>"/>
+            <entry
+                name="owner"
+                string="android.app.NotificationChannel"/>
+            <api-levels id="requiresApi"
+                value="fffffffffe000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="NewApi"
+        severity="error"
+        message="">
+        <fix-data minSdk="ffffffffff800000" requiresApi="fffffffffe000000"/>
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/BootReceiver.kt"
+            line="19"
+            column="25"
+            startOffset="792"
+            endLine="19"
+            endColumn="47"
+            endOffset="814"/>
+        <map>
+            <entry
+                name="desc"
+                string="(Landroid.content.Intent;)"/>
+            <entry
+                name="message"
+                string="Call requires API level 26 (current min is %1$s): `android.content.Context#startForegroundService`"/>
+            <api-levels id="minSdk"
+                value="ffffffffff800000"/>
+            <entry
+                name="name"
+                string="startForegroundService"/>
+            <entry
+                name="owner"
+                string="android.content.Context"/>
+            <api-levels id="requiresApi"
+                value="fffffffffe000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="NewApi"
+        severity="error"
+        message="">
+        <fix-data minSdk="ffffffffff800000" requiresApi="fffffffffe000000"/>
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/DumbModeViewModel.kt"
+            line="82"
+            column="21"
+            startOffset="3053"
+            endLine="82"
+            endColumn="43"
+            endOffset="3075"/>
+        <map>
+            <entry
+                name="desc"
+                string="(Landroid.content.Intent;)"/>
+            <entry
+                name="message"
+                string="Call requires API level 26 (current min is %1$s): `android.content.Context#startForegroundService`"/>
+            <api-levels id="minSdk"
+                value="ffffffffff800000"/>
+            <entry
+                name="name"
+                string="startForegroundService"/>
+            <entry
+                name="owner"
+                string="android.content.Context"/>
+            <api-levels id="requiresApi"
+                value="fffffffffe000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="NewApi"
+        severity="error"
+        message="">
+        <fix-data minSdk="ffffffffff800000" requiresApi="fffffffff0000000"/>
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/DumbModeViewModel.kt"
+            line="99"
+            column="34"
+            startOffset="3755"
+            endLine="99"
+            endColumn="54"
+            endOffset="3775"/>
+        <map>
+            <entry
+                name="desc"
+                string="(Ljava.lang.String;ILjava.lang.String;)"/>
+            <entry
+                name="message"
+                string="Call requires API level 29 (current min is %1$s): `android.app.AppOpsManager#unsafeCheckOpNoThrow`"/>
+            <api-levels id="minSdk"
+                value="ffffffffff800000"/>
+            <entry
+                name="name"
+                string="unsafeCheckOpNoThrow"/>
+            <entry
+                name="owner"
+                string="android.app.AppOpsManager"/>
+            <api-levels id="requiresApi"
+                value="fffffffff0000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="NewApi"
+        severity="error"
+        message="">
+        <fix-data minSdk="ffffffffff800000" requiresApi="fffffffffe000000"/>
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/NotificationListener.kt"
+            line="112"
+            column="23"
+            startOffset="4137"
+            endLine="112"
+            endColumn="42"
+            endOffset="4156"/>
+        <map>
+            <entry
+                name="desc"
+                string="(Ljava.lang.String;Ljava.lang.CharSequence;I)"/>
+            <entry
+                name="message"
+                string="Call requires API level 26 (current min is %1$s): `android.app.NotificationChannel()`"/>
+            <api-levels id="minSdk"
+                value="ffffffffff800000"/>
+            <entry
+                name="name"
+                string="&lt;init>"/>
+            <entry
+                name="owner"
+                string="android.app.NotificationChannel"/>
+            <api-levels id="requiresApi"
+                value="fffffffffe000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="NewApi"
+        severity="error"
+        message="">
+        <fix-data minSdk="ffffffffff800000" requiresApi="fffffffffe000000"/>
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/NotificationListener.kt"
+            line="119"
+            column="29"
+            startOffset="4408"
+            endLine="119"
+            endColumn="54"
+            endOffset="4433"/>
+        <map>
+            <entry
+                name="desc"
+                string="(Landroid.app.NotificationChannel;)"/>
+            <entry
+                name="message"
+                string="Call requires API level 26 (current min is %1$s): `android.app.NotificationManager#createNotificationChannel`"/>
+            <api-levels id="minSdk"
+                value="ffffffffff800000"/>
+            <entry
+                name="name"
+                string="createNotificationChannel"/>
+            <entry
+                name="owner"
+                string="android.app.NotificationManager"/>
+            <api-levels id="requiresApi"
+                value="fffffffffe000000"/>
+        </map>
+    </incident>
+
+    <incident
+        id="NotificationPermission"
+        severity="error"
+        message="When targeting Android 13 or higher, posting a permission requires holding the `POST_NOTIFICATIONS` permission">
+        <fix-data missing="android.permission.POST_NOTIFICATIONS"/>
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/NotificationListener.kt"
+            line="147"
+            column="9"
+            startOffset="5559"
+            endLine="147"
+            endColumn="85"
+            endOffset="5635"/>
+    </incident>
+
+    <incident
+        id="CustomSplashScreen"
+        severity="warning"
+        message="The application should not provide its own launch screen">
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/SplashActivity.kt"
+            line="26"
+            column="7"
+            startOffset="783"
+            endLine="26"
+            endColumn="21"
+            endOffset="797"/>
+        <map>
+            <condition targetGE="31"/>
+        </map>
+    </incident>
+
+    <incident
+        id="QueryPermissionsNeeded"
+        severity="warning"
+        message="As of Android 11, this method no longer returns information about all apps; see https://g.co/dev/packagevisibility for details">
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*javaDir*1}/com/cactus/example/DumbModeViewModel.kt"
+            line="45"
+            column="39"
+            startOffset="1663"
+            endLine="45"
+            endColumn="63"
+            endOffset="1687"/>
+        <map>
+            <entry
+                name="queryAll"
+                boolean="true"/>
+        </map>
+    </incident>
+
+</incidents>
