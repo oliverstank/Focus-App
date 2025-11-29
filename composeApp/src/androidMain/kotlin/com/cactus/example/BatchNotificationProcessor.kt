@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -161,10 +161,10 @@ class BatchNotificationProcessor(
 
             Log.d("BatchNotificationProcessor", "Extracted CSV line: $cleanedResponse")
 
-            // Extract the comma-separated values
+            // Extract the values (comma-separated OR whitespace-separated)
             val values = cleanedResponse
                 .lowercase()
-                .replace(Regex("[\\s\\n]"), "") // Remove whitespace
+                .replace(Regex("\\s+"), ",") // Replace whitespace with commas first
                 .split(",")
                 .map { it.trim() }
                 .filter { it.isNotEmpty() }

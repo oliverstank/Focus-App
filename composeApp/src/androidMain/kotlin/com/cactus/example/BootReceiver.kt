@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 import android.content.BroadcastReceiver
 import android.content.Context

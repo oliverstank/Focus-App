@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 import android.app.ActivityManager
 import android.app.Notification
@@ -229,7 +229,7 @@ class AppBlockerService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        if (intent?.action == "com.cactus.example.ACTION_CHECK_FOREGROUND_APP") {
+        if (intent?.action == "com.focus.ACTION_CHECK_FOREGROUND_APP") {
             checkForegroundApp()
         }
         return START_STICKY

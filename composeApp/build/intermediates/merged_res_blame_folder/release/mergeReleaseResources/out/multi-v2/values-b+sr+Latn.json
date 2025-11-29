@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.cactus.example.composeApp-mergeReleaseResources-47:/values-b+sr+Latn/values-b+sr+Latn.xml",
+            "outputFile": "com.focus.composeApp-mergeReleaseResources-47:/values-b+sr+Latn/values-b+sr+Latn.xml",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-b+sr+Latn/values-b+sr+Latn.xml",

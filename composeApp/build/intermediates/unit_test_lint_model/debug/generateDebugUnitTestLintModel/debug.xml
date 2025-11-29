@@ -1,6 +1,6 @@
 <variant
     name="debug"
-    package="com.cactus.example"
+    package="com.focus"
     minSdkVersion="24"
     targetSdkVersion="35"
     debuggable="true"

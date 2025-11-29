@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -95,11 +95,21 @@ fun ProcessingStatusBar() {
     val pendingNotifications by FocusModeRepository.pendingNotifications.collectAsState()
     var timeRemaining by remember { mutableStateOf(0L) }
 
-    // Update countdown every second
+    // Update countdown every second and trigger processing when timer hits 0
     LaunchedEffect(processingState.nextScanTime) {
         while (true) {
             val remaining = max(0, processingState.nextScanTime - System.currentTimeMillis())
             timeRemaining = remaining
+
+            // Auto-trigger processing when timer hits 0
+            if (remaining == 0L &&
+                (processingState.status == ProcessingStatus.IDLE ||
+                 processingState.status == ProcessingStatus.COMPLETE)) {
+                // Trigger worker immediately
+                val workRequest = OneTimeWorkRequestBuilder<NotificationProcessingWorker>().build()
+                WorkManager.getInstance(context).enqueue(workRequest)
+            }
+
             delay(1000)
         }
     }
@@ -226,23 +236,7 @@ fun NotificationSummaryScreen(modifier: Modifier = Modifier, viewModel: Notifica
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background,
                     titleContentColor = MaterialTheme.colorScheme.onBackground
-                ),
-                actions = {
-                    IconButton(
-                        onClick = { viewModel.clearNotifications() },
-                        modifier = Modifier
-                            .padding(end = 8.dp)
-                            .size(40.dp)
-                            .clip(RoundedCornerShape(12.dp))
-                            .background(MaterialTheme.colorScheme.surface)
-                    ) {
-                        Icon(
-                            Icons.Default.Clear,
-                            contentDescription = "Clear notifications",
-                            tint = MaterialTheme.colorScheme.primary
-                        )
-                    }
-                }
+                )
             )
         }
     ) { paddingValues ->

@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 import com.cactus.CactusLM
 import com.cactus.CactusInitParams

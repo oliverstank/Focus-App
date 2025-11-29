@@ -9,7 +9,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.cactus.example"
+    namespace = "com.focus"
     compileSdk = 35
 
     sourceSets {
@@ -21,7 +21,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.cactus.example"
+        applicationId = "com.focus"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

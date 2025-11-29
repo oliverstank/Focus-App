@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.cactus.example"
+3    package="com.focus"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
@@ -35,18 +35,18 @@
 20
 21    <permission
 21-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
-22        android:name="com.cactus.example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+22        android:name="com.focus.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 22-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
 23        android:protectionLevel="signature" />
 23-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
 24
-25    <uses-permission android:name="com.cactus.example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+25    <uses-permission android:name="com.focus.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 25-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
 25-->[androidx.core:core:1.12.0] /Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
 26
 27    <application
 27-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:15:5-82:19
-28        android:name="com.cactus.example.MyApplication"
+28        android:name="com.focus.MyApplication"
 28-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:16:9-38
 29        android:allowBackup="true"
 29-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:17:9-35
@@ -68,7 +68,7 @@
 37-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:23:9-44
 38        <activity
 38-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:25:9-33:20
-39            android:name="com.cactus.example.SplashActivity"
+39            android:name="com.focus.SplashActivity"
 39-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:26:13-43
 40            android:exported="true"
 40-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:27:13-36
@@ -87,7 +87,7 @@
 47        </activity>
 48        <activity
 48-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:34:9-41:20
-49            android:name="com.cactus.example.MainActivity"
+49            android:name="com.focus.MainActivity"
 49-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:37:13-41
 50            android:exported="true"
 50-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:35:13-36
@@ -103,7 +103,7 @@
 56
 57        <service
 57-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:43:9-50:19
-58            android:name="com.cactus.example.NotificationListener"
+58            android:name="com.focus.NotificationListener"
 58-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:44:13-49
 59            android:exported="true"
 59-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:45:13-36
@@ -118,7 +118,7 @@
 64        </service>
 65        <service
 65-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:52:9-59:19
-66            android:name="com.cactus.example.AppBlockerService"
+66            android:name="com.focus.AppBlockerService"
 66-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:53:13-46
 67            android:exported="false"
 67-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:54:13-37
@@ -134,13 +134,13 @@
 73
 74        <receiver
 74-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:61:9-63:40
-75            android:name="com.cactus.example.UnlockReceiver"
+75            android:name="com.focus.UnlockReceiver"
 75-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:62:13-43
 76            android:exported="false" />
 76-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:63:13-37
 77        <receiver
 77-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:65:9-71:20
-78            android:name="com.cactus.example.BootReceiver"
+78            android:name="com.focus.BootReceiver"
 78-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:66:13-41
 79            android:exported="true" >
 79-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:67:13-36
@@ -153,7 +153,7 @@
 83        </receiver>
 84        <receiver
 84-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:73:9-81:20
-85            android:name="com.cactus.example.DeviceStateReceiver"
+85            android:name="com.focus.DeviceStateReceiver"
 85-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:74:13-48
 86            android:exported="true" >
 86-->/Users/mac/Desktop/hackathonforcactus/composeApp/src/androidMain/AndroidManifest.xml:75:13-36
@@ -175,7 +175,7 @@
 94-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
 95            android:name="androidx.startup.InitializationProvider"
 95-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
-96            android:authorities="com.cactus.example.androidx-startup"
+96            android:authorities="com.focus.androidx-startup"
 96-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
 97            android:exported="false" >
 97-->[androidx.emoji2:emoji2:1.3.0] /Users/mac/.gradle/caches/8.9/transforms/f8df3cef6785ac04a179dc3c622ed0fd/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37

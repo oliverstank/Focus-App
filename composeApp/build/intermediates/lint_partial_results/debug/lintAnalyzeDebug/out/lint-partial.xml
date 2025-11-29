@@ -42,16 +42,16 @@
     <map id="UnsafeIntentLaunch">
             <map id="unprotected">
                 <entry
-                    name="com.cactus.example.BootReceiver"
+                    name="com.focus.BootReceiver"
                     boolean="true"/>
                 <entry
-                    name="com.cactus.example.DeviceStateReceiver"
+                    name="com.focus.DeviceStateReceiver"
                     boolean="true"/>
                 <entry
-                    name="com.cactus.example.MainActivity"
+                    name="com.focus.MainActivity"
                     boolean="true"/>
                 <entry
-                    name="com.cactus.example.SplashActivity"
+                    name="com.focus.SplashActivity"
                     boolean="true"/>
             </map>
     </map>

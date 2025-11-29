@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape

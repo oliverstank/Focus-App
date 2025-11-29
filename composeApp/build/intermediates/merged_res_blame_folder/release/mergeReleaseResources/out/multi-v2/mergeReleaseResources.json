@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-sk_values-sk.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-sk_values-sk.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-sk/values-sk.xml",
@@ -91,7 +91,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-bg_values-bg.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-bg_values-bg.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-bg/values-bg.xml",
@@ -181,7 +181,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-zh-rCN_values-zh-rCN.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-zh-rCN_values-zh-rCN.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-zh-rCN/values-zh-rCN.xml",
@@ -271,7 +271,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-eu_values-eu.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-eu_values-eu.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-eu/values-eu.xml",
@@ -361,7 +361,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-v25_values-v25.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-v25_values-v25.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-v25/values-v25.xml",
@@ -377,7 +377,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ms_values-ms.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ms_values-ms.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/01b0476a98329b30d37818b820214e3a/transformed/foundation-release/res/values-ms/values-ms.xml",
@@ -467,7 +467,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ldltr-v21_values-ldltr-v21.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ldltr-v21_values-ldltr-v21.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-ldltr-v21/values-ldltr-v21.xml",
@@ -482,7 +482,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ro_values-ro.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ro_values-ro.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-ro/values-ro.xml",
@@ -572,7 +572,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-mn_values-mn.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-mn_values-mn.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-mn/values-mn.xml",
@@ -662,7 +662,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-pt_values-pt.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-pt_values-pt.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-pt/values-pt.xml",
@@ -752,7 +752,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-hr_values-hr.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-hr_values-hr.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-hr/values-hr.xml",
@@ -842,7 +842,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-uk_values-uk.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-uk_values-uk.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-uk/values-uk.xml",
@@ -932,7 +932,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-sw600dp-v13_values-sw600dp-v13.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-sw600dp-v13_values-sw600dp-v13.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-sw600dp-v13/values-sw600dp-v13.xml",
@@ -947,7 +947,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-b+sr+Latn_values-b+sr+Latn.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-b+sr+Latn_values-b+sr+Latn.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-b+sr+Latn/values-b+sr+Latn.xml",
@@ -1037,7 +1037,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ne_values-ne.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ne_values-ne.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-ne/values-ne.xml",
@@ -1127,7 +1127,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-land_values-land.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-land_values-land.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-land/values-land.xml",
@@ -1142,7 +1142,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-gu_values-gu.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-gu_values-gu.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-gu/values-gu.xml",
@@ -1232,7 +1232,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-pa_values-pa.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-pa_values-pa.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-pa/values-pa.xml",
@@ -1322,7 +1322,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-v16_values-v16.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-v16_values-v16.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-v16/values-v16.xml",
@@ -1356,7 +1356,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-kn_values-kn.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-kn_values-kn.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-kn/values-kn.xml",
@@ -1446,7 +1446,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-en-rAU_values-en-rAU.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-en-rAU_values-en-rAU.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/01b0476a98329b30d37818b820214e3a/transformed/foundation-release/res/values-en-rAU/values-en-rAU.xml",
@@ -1536,7 +1536,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values_values.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values_values.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/7b8fa1875bd42612f939d3402d66b31d/transformed/lifecycle-runtime-2.7.0/res/values/values.xml",
@@ -1808,7 +1808,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-en-rCA_values-en-rCA.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-en-rCA_values-en-rCA.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-en-rCA/values-en-rCA.xml",
@@ -1898,7 +1898,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-in_values-in.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-in_values-in.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-in/values-in.xml",
@@ -1988,7 +1988,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-hi_values-hi.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-hi_values-hi.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/01b0476a98329b30d37818b820214e3a/transformed/foundation-release/res/values-hi/values-hi.xml",
@@ -2078,7 +2078,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-fr_values-fr.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-fr_values-fr.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-fr/values-fr.xml",
@@ -2168,7 +2168,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-hu_values-hu.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-hu_values-hu.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-hu/values-hu.xml",
@@ -2258,7 +2258,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-or_values-or.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-or_values-or.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-or/values-or.xml",
@@ -2348,7 +2348,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ru_values-ru.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ru_values-ru.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-ru/values-ru.xml",
@@ -2438,7 +2438,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-en-rIN_values-en-rIN.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-en-rIN_values-en-rIN.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-en-rIN/values-en-rIN.xml",
@@ -2528,7 +2528,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-az_values-az.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-az_values-az.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-az/values-az.xml",
@@ -2618,7 +2618,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-hy_values-hy.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-hy_values-hy.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-hy/values-hy.xml",
@@ -2708,7 +2708,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-v26_values-v26.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-v26_values-v26.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-v26/values-v26.xml",
@@ -2724,7 +2724,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-af_values-af.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-af_values-af.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-af/values-af.xml",
@@ -2814,7 +2814,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-iw_values-iw.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-iw_values-iw.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-iw/values-iw.xml",
@@ -2904,7 +2904,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-en-rXC_values-en-rXC.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-en-rXC_values-en-rXC.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-en-rXC/values-en-rXC.xml",
@@ -2994,7 +2994,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-nb_values-nb.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-nb_values-nb.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-nb/values-nb.xml",
@@ -3084,7 +3084,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-fi_values-fi.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-fi_values-fi.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-fi/values-fi.xml",
@@ -3174,7 +3174,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-pl_values-pl.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-pl_values-pl.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-pl/values-pl.xml",
@@ -3264,7 +3264,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-v28_values-v28.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-v28_values-v28.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-v28/values-v28.xml",
@@ -3280,7 +3280,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-th_values-th.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-th_values-th.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-th/values-th.xml",
@@ -3370,7 +3370,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-lo_values-lo.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-lo_values-lo.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-lo/values-lo.xml",
@@ -3460,7 +3460,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-tl_values-tl.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-tl_values-tl.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-tl/values-tl.xml",
@@ -3550,7 +3550,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-mr_values-mr.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-mr_values-mr.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-mr/values-mr.xml",
@@ -3640,7 +3640,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-v22_values-v22.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-v22_values-v22.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-v22/values-v22.xml",
@@ -3656,7 +3656,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-de_values-de.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-de_values-de.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-de/values-de.xml",
@@ -3746,7 +3746,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-es-rUS_values-es-rUS.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-es-rUS_values-es-rUS.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-es-rUS/values-es-rUS.xml",
@@ -3836,7 +3836,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-bs_values-bs.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-bs_values-bs.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-bs/values-bs.xml",
@@ -3926,7 +3926,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-lt_values-lt.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-lt_values-lt.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-lt/values-lt.xml",
@@ -4016,7 +4016,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-gl_values-gl.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-gl_values-gl.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-gl/values-gl.xml",
@@ -4106,7 +4106,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-v24_values-v24.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-v24_values-v24.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
@@ -4121,7 +4121,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-h720dp-v13_values-h720dp-v13.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-h720dp-v13_values-h720dp-v13.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-h720dp-v13/values-h720dp-v13.xml",
@@ -4136,7 +4136,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ja_values-ja.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ja_values-ja.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-ja/values-ja.xml",
@@ -4226,7 +4226,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-zh-rHK_values-zh-rHK.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-zh-rHK_values-zh-rHK.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-zh-rHK/values-zh-rHK.xml",
@@ -4316,7 +4316,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-fr-rCA_values-fr-rCA.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-fr-rCA_values-fr-rCA.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/01b0476a98329b30d37818b820214e3a/transformed/foundation-release/res/values-fr-rCA/values-fr-rCA.xml",
@@ -4406,7 +4406,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-el_values-el.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-el_values-el.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/01b0476a98329b30d37818b820214e3a/transformed/foundation-release/res/values-el/values-el.xml",
@@ -4496,7 +4496,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-km_values-km.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-km_values-km.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/01b0476a98329b30d37818b820214e3a/transformed/foundation-release/res/values-km/values-km.xml",
@@ -4586,7 +4586,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-hdpi-v4_values-hdpi-v4.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-hdpi-v4_values-hdpi-v4.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-hdpi-v4/values-hdpi-v4.xml",
@@ -4602,7 +4602,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-tr_values-tr.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-tr_values-tr.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-tr/values-tr.xml",
@@ -4692,7 +4692,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-it_values-it.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-it_values-it.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/01b0476a98329b30d37818b820214e3a/transformed/foundation-release/res/values-it/values-it.xml",
@@ -4782,7 +4782,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ar_values-ar.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ar_values-ar.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-ar/values-ar.xml",
@@ -4872,7 +4872,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ml_values-ml.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ml_values-ml.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-ml/values-ml.xml",
@@ -4962,7 +4962,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-es_values-es.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-es_values-es.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-es/values-es.xml",
@@ -5052,7 +5052,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-be_values-be.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-be_values-be.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-be/values-be.xml",
@@ -5142,7 +5142,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-bn_values-bn.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-bn_values-bn.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-bn/values-bn.xml",
@@ -5232,7 +5232,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-port_values-port.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-port_values-port.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-port/values-port.xml",
@@ -5247,7 +5247,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-en-rGB_values-en-rGB.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-en-rGB_values-en-rGB.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-en-rGB/values-en-rGB.xml",
@@ -5337,7 +5337,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-nl_values-nl.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-nl_values-nl.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-nl/values-nl.xml",
@@ -5427,7 +5427,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ur_values-ur.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ur_values-ur.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-ur/values-ur.xml",
@@ -5517,7 +5517,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-sv_values-sv.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-sv_values-sv.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-sv/values-sv.xml",
@@ -5607,7 +5607,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-si_values-si.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-si_values-si.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-si/values-si.xml",
@@ -5697,7 +5697,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-night-v8_values-night-v8.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-night-v8/values-night-v8.xml",
@@ -5712,7 +5712,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-large-v4_values-large-v4.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-large-v4_values-large-v4.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-large-v4/values-large-v4.xml",
@@ -5727,7 +5727,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-xlarge-v4_values-xlarge-v4.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-xlarge-v4_values-xlarge-v4.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-xlarge-v4/values-xlarge-v4.xml",
@@ -5742,7 +5742,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-fa_values-fa.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-fa_values-fa.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/01b0476a98329b30d37818b820214e3a/transformed/foundation-release/res/values-fa/values-fa.xml",
@@ -5832,7 +5832,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-sw_values-sw.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-sw_values-sw.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-sw/values-sw.xml",
@@ -5922,7 +5922,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ca_values-ca.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ca_values-ca.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-ca/values-ca.xml",
@@ -6012,7 +6012,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-v17_values-v17.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-v17_values-v17.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-v17/values-v17.xml",
@@ -6028,7 +6028,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-v18_values-v18.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-v18_values-v18.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-v18/values-v18.xml",
@@ -6043,7 +6043,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-pt-rBR_values-pt-rBR.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-pt-rBR_values-pt-rBR.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-pt-rBR/values-pt-rBR.xml",
@@ -6133,7 +6133,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-vi_values-vi.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-vi_values-vi.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-vi/values-vi.xml",
@@ -6223,7 +6223,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-sr_values-sr.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-sr_values-sr.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-sr/values-sr.xml",
@@ -6313,7 +6313,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-da_values-da.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-da_values-da.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-da/values-da.xml",
@@ -6403,7 +6403,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-uz_values-uz.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-uz_values-uz.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-uz/values-uz.xml",
@@ -6493,7 +6493,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-et_values-et.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-et_values-et.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-et/values-et.xml",
@@ -6583,7 +6583,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ko_values-ko.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ko_values-ko.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-ko/values-ko.xml",
@@ -6673,7 +6673,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-is_values-is.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-is_values-is.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-is/values-is.xml",
@@ -6763,7 +6763,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-watch-v20_values-watch-v20.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-watch-v20_values-watch-v20.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
@@ -6779,7 +6779,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ta_values-ta.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ta_values-ta.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-ta/values-ta.xml",
@@ -6869,7 +6869,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-lv_values-lv.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-lv_values-lv.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-lv/values-lv.xml",
@@ -6959,7 +6959,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-zu_values-zu.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-zu_values-zu.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-zu/values-zu.xml",
@@ -7049,7 +7049,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-as_values-as.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-as_values-as.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-as/values-as.xml",
@@ -7139,7 +7139,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-am_values-am.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-am_values-am.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-am/values-am.xml",
@@ -7229,7 +7229,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-kk_values-kk.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-kk_values-kk.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-kk/values-kk.xml",
@@ -7319,7 +7319,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-v21_values-v21.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-v21_values-v21.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-v21/values-v21.xml",
@@ -7362,7 +7362,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-zh-rTW_values-zh-rTW.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-zh-rTW_values-zh-rTW.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-zh-rTW/values-zh-rTW.xml",
@@ -7452,7 +7452,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-cs_values-cs.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-cs_values-cs.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-cs/values-cs.xml",
@@ -7542,7 +7542,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-v23_values-v23.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-v23_values-v23.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-v23/values-v23.xml",
@@ -7558,7 +7558,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-my_values-my.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-my_values-my.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-my/values-my.xml",
@@ -7648,7 +7648,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-sq_values-sq.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-sq_values-sq.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/dafd0bf1cec515d9dbfd175088b6b8e3/transformed/material3-release/res/values-sq/values-sq.xml",
@@ -7738,7 +7738,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-pt-rPT_values-pt-rPT.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-pt-rPT_values-pt-rPT.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/bb33f19c79c885d963861c32a273f2be/transformed/core-1.12.0/res/values-pt-rPT/values-pt-rPT.xml",
@@ -7828,7 +7828,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-sl_values-sl.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-sl_values-sl.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-sl/values-sl.xml",
@@ -7918,7 +7918,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-watch-v21_values-watch-v21.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-watch-v21_values-watch-v21.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-watch-v21/values-watch-v21.xml",
@@ -7934,7 +7934,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-mk_values-mk.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-mk_values-mk.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-mk/values-mk.xml",
@@ -8024,7 +8024,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ka_values-ka.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ka_values-ka.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-ka/values-ka.xml",
@@ -8114,7 +8114,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-ky_values-ky.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-ky_values-ky.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/532799d5f6bb12f202614fe5fd7f817b/transformed/ui-release/res/values-ky/values-ky.xml",
@@ -8204,7 +8204,7 @@
             ]
         },
         {
-            "outputFile": "com.cactus.example.composeApp-release-49:/values-te_values-te.arsc.flat",
+            "outputFile": "com.focus.composeApp-release-49:/values-te_values-te.arsc.flat",
             "map": [
                 {
                     "source": "/Users/mac/.gradle/caches/8.9/transforms/b7cf5886880756da8cebfba8ba3663f3/transformed/appcompat-1.6.1/res/values-te/values-te.xml",

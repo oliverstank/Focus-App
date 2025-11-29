@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 import android.app.Application
 import com.cactus.CactusContextInitializer

@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -80,7 +80,7 @@ class NotificationListener : NotificationListenerService() {
         val timestamp = sbn.postTime
 
         // Don't record notifications from our own app
-        if (packageName == "com.cactus.example") return
+        if (packageName == "com.focus") return
 
         // Store the notification
         val notificationData = NotificationData(

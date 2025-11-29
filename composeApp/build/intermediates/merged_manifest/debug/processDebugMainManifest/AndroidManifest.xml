@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cactus.example"
+    package="com.focus"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -17,17 +17,18 @@
         android:name="android.permission.PACKAGE_USAGE_STATS"
         android:protectionLevel="signature|privileged|appop|preinstalled|installer|verifier|setup" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <permission
-        android:name="com.cactus.example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.focus.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.cactus.example.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.focus.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
-        android:name="com.cactus.example.MyApplication"
+        android:name="com.focus.MyApplication"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -39,7 +40,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.cactus.example.SplashActivity"
+            android:name="com.focus.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
@@ -49,7 +50,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.cactus.example.MainActivity"
+            android:name="com.focus.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" >
             <intent-filter>
@@ -58,7 +59,7 @@
         </activity>
 
         <service
-            android:name="com.cactus.example.NotificationListener"
+            android:name="com.focus.NotificationListener"
             android:exported="true"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
             <intent-filter>
@@ -66,7 +67,7 @@
             </intent-filter>
         </service>
         <service
-            android:name="com.cactus.example.AppBlockerService"
+            android:name="com.focus.AppBlockerService"
             android:exported="false"
             android:foregroundServiceType="specialUse" >
             <property
@@ -75,17 +76,17 @@
         </service>
 
         <receiver
-            android:name="com.cactus.example.UnlockReceiver"
+            android:name="com.focus.UnlockReceiver"
             android:exported="false" />
         <receiver
-            android:name="com.cactus.example.BootReceiver"
+            android:name="com.focus.BootReceiver"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
         <receiver
-            android:name="com.cactus.example.DeviceStateReceiver"
+            android:name="com.focus.DeviceStateReceiver"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.SCREEN_ON" />
@@ -100,7 +101,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.cactus.example.androidx-startup"
+            android:authorities="com.focus.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.work.WorkManagerInitializer"

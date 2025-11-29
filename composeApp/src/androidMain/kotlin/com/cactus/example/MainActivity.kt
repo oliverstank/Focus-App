@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 import android.content.ComponentName
 import android.content.Intent

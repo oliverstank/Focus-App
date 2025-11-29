@@ -1,6 +1,6 @@
 <variant
     name="debug"
-    package="com.cactus.example"
+    package="com.focus"
     minSdkVersion="24"
     targetSdkVersion="35"
     debuggable="true"
@@ -23,7 +23,7 @@
   </testFixturesSourceProviders>
   <artifact
       type="INSTRUMENTATION_TEST"
-      applicationId="com.cactus.example.test"
+      applicationId="com.focus.test"
       generatedResourceFolders="build/generated/res/resValues/androidTest/debug"
       desugaredMethodsFiles="/Users/mac/.gradle/caches/8.9/transforms/cb5b0fc1d55555c764982a6276e9a2eb/transformed/D8BackportedDesugaredMethods.txt">
   </artifact>

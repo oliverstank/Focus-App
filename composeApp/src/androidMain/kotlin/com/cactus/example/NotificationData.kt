@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 data class NotificationData(
     val id: String,

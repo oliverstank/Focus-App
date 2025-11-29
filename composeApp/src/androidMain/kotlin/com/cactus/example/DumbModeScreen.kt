@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -390,7 +390,9 @@ fun AppSelectorDialog(
                         .padding(bottom = 8.dp)
                 )
                 LazyColumn(
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(400.dp),
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     val filteredApps = apps.filter {

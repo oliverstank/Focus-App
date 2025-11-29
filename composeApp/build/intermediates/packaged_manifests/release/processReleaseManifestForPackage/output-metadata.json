@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.cactus.example",
+  "applicationId": "com.focus",
   "variantName": "release",
   "elements": [
     {

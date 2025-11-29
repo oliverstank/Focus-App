@@ -1,54 +1,54 @@
 [
     {
-        "merged": "com.cactus.example.composeApp-release-49:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.focus.composeApp-release-49:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.focus.composeApp-androidMain-50:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.cactus.example.composeApp-release-49:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "com.focus.composeApp-release-49:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.focus.composeApp-androidMain-50:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.cactus.example.composeApp-release-49:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/drawable/ic_launcher_background.xml"
+        "merged": "com.focus.composeApp-release-49:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.focus.composeApp-androidMain-50:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.cactus.example.composeApp-release-49:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "com.focus.composeApp-release-49:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.focus.composeApp-androidMain-50:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.cactus.example.composeApp-release-49:/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/drawable-v24/ic_launcher_foreground.xml"
+        "merged": "com.focus.composeApp-release-49:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.focus.composeApp-androidMain-50:/drawable-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.cactus.example.composeApp-release-49:/font_led_dot_matrix.ttf.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/font/led_dot_matrix.ttf"
+        "merged": "com.focus.composeApp-release-49:/font_led_dot_matrix.ttf.flat",
+        "source": "com.focus.composeApp-androidMain-50:/font/led_dot_matrix.ttf"
     },
     {
-        "merged": "com.cactus.example.composeApp-release-49:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.focus.composeApp-release-49:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.focus.composeApp-androidMain-50:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.cactus.example.composeApp-release-49:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.focus.composeApp-release-49:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.focus.composeApp-androidMain-50:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.cactus.example.composeApp-release-49:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.focus.composeApp-release-49:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.focus.composeApp-androidMain-50:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.cactus.example.composeApp-release-49:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.focus.composeApp-release-49:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.focus.composeApp-androidMain-50:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.cactus.example.composeApp-release-49:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "com.focus.composeApp-release-49:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.focus.composeApp-androidMain-50:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.cactus.example.composeApp-release-49:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.focus.composeApp-release-49:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.focus.composeApp-androidMain-50:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.cactus.example.composeApp-release-49:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.cactus.example.composeApp-androidMain-50:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "com.focus.composeApp-release-49:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.focus.composeApp-androidMain-50:/mipmap-xhdpi/ic_launcher_round.png"
     }
 ]

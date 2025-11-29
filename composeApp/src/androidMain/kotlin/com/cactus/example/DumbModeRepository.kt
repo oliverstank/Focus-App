@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -75,7 +75,7 @@ object FocusModeRepository {
         }
         _settings.value = settings
     }
-
+    
     fun setFocusModeEnabled(enabled: Boolean) {
         val newSettings = _settings.value.copy(isEnabled = enabled)
         updateSettings(newSettings)

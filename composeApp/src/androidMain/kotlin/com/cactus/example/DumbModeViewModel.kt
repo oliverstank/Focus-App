@@ -1,4 +1,4 @@
-package com.cactus.example
+package com.focus
 
 import android.content.Context
 import android.content.Intent
@@ -57,17 +57,19 @@ class FocusModeViewModel : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             val packageManager = context.packageManager
 
-            // Get all apps that can be launched
-            val apps = packageManager.getInstalledApplications(android.content.pm.PackageManager.GET_META_DATA)
+            val mainIntent = Intent(Intent.ACTION_MAIN, null)
+            mainIntent.addCategory(Intent.CATEGORY_LAUNCHER)
+
+            val apps = packageManager.queryIntentActivities(mainIntent, 0)
+                .map { resolveInfo ->
+                    WhitelistedAppInfo(
+                        packageName = resolveInfo.activityInfo.packageName,
+                        appName = resolveInfo.loadLabel(packageManager).toString(),
+                        isWhitelisted = resolveInfo.activityInfo.packageName in _settings.value.whitelistedApps
+                    )
+                }
                 .filter { appInfo ->
                     appInfo.packageName != context.packageName
-                }
-                .map { appInfo ->
-                    WhitelistedAppInfo(
-                        packageName = appInfo.packageName,
-                        appName = appInfo.loadLabel(packageManager).toString(),
-                        isWhitelisted = appInfo.packageName in _settings.value.whitelistedApps
-                    )
                 }
                 .sortedBy { it.appName }
 
@@ -109,7 +111,7 @@ class FocusModeViewModel : ViewModel() {
             }
         }
     }
-
+    
     private fun hasUsageStatsPermission(context: Context): Boolean {
         val appOpsManager = context.getSystemService(Context.APP_OPS_SERVICE) as android.app.AppOpsManager
         val mode = appOpsManager.unsafeCheckOpNoThrow(
